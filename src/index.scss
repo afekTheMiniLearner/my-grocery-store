@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url("./assets/fonts/Ubuntu.ttf");
+}
+
+body {
+  font-family: "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.app-container {
+  margin: 10px;
+}

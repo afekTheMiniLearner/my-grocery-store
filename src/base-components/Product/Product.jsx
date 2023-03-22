@@ -3,17 +3,27 @@ import PropTypes from "prop-types";
 
 import "./Product.scss";
 
-function Product({ id, productName, selectedCount, price, onAdd, onRemove }) {
+function Product({
+  productId,
+  productName,
+  selectedCount,
+  price,
+  onAdd,
+  onRemove,
+}) {
   return (
     <div className="product-container">
       <h3>Product: {productName}</h3>
       <h4>Price: ${price}</h4>
       {!!selectedCount && (
-        <button className="product-button" onClick={() => onRemove?.(id)}>
+        <button
+          className="product-button"
+          onClick={() => onRemove?.(productId)}
+        >
           Remove from Cart
         </button>
       )}
-      <button className="product-button" onClick={() => onAdd?.(id)}>
+      <button className="product-button" onClick={() => onAdd?.(productId)}>
         Add to Cart {selectedCount ? `(${selectedCount})` : ""}
       </button>
     </div>
@@ -21,16 +31,16 @@ function Product({ id, productName, selectedCount, price, onAdd, onRemove }) {
 }
 
 Product.propTypes = {
-  id: PropTypes.number,
-  productName: PropTypes.number,
-  selectedCount: PropTypes.string,
-  price: PropTypes.string,
+  productId: PropTypes.string,
+  productName: PropTypes.string,
+  selectedCount: PropTypes.number,
+  price: PropTypes.number,
   onAdd: PropTypes.func,
   onRemove: PropTypes.func,
 };
 
 Product.defaultProps = {
-  id: undefined,
+  productId: undefined,
   productName: "unnamed",
   selectedCount: 0,
   price: 0,

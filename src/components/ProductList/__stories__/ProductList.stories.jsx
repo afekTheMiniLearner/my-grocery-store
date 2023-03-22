@@ -1,5 +1,7 @@
 import React from "react";
+
 import ProductList from "../ProductList";
+import { mockProducts } from "../../../utils";
 
 export default {
   title: "components/ProductList",
@@ -21,7 +23,7 @@ export default {
   ],
 };
 
-export const Default = () => <ProductList />;
+export const Default = () => <ProductList productList={mockProducts} />;
 Default.decorators = [
   (Story) => (
     <div
@@ -49,7 +51,7 @@ export const AdjustSize = (props) => (
       border: "2px red solid",
     }}
   >
-    <ProductList />
+    <ProductList productList={mockProducts} />
   </div>
 );
 AdjustSize.argTypes = {
@@ -63,22 +65,11 @@ AdjustSize.argTypes = {
   },
 };
 
-const Template = (args) => <ProductList {...args} />;
+const Template = (args) => <ProductList {...args} productList={mockProducts} />;
 
 export const Custom = Template.bind({});
 Custom.argTypes = {
-  backgroundColor: { control: { type: "color" } },
-  columns: {
-    control: { type: "number", min: 1, max: 50, step: 1 },
-    defaultValue: 5,
-  },
-  rows: {
-    control: { type: "number", min: 1, max: 50, step: 1 },
-    defaultValue: 4,
-  },
-
-  allowRepeatedColors: { control: { type: "boolean" } },
-  colors: { control: false },
+  
 };
 Custom.decorators = [
   (Story) => (

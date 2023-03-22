@@ -4,7 +4,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding: 1em;
+  margin-bottom: 10px;
+  border: 2px black solid;
+  border-radius: 10px;
   background-color: $primary-color;
 }

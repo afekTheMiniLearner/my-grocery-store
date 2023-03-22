@@ -1,20 +1,26 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 
-function renameMe({ prop }) {
-  return (
-    <div className="rename-container">
-      hello im : {prop} from israel, live in england now
-    </div>
+import { Cart } from "../../base-components";
+import {
+  getSelectedProductsSelector,
+  getTotalPriceSelector,
+} from "../../store";
+
+function CartConnected() {
+  const selectedProducts = useSelector((state) => {
+    return getSelectedProductsSelector(state);
+  });
+  const totalPrice = useSelector((state) => {
+    return getTotalPriceSelector(state);
+  });
+
+  const totalSelected = Object.values(selectedProducts).reduce(
+    (total, products) => total + products,
+    0
   );
+
+  return <Cart totalPrice={totalPrice} totalSelected={totalSelected} />;
 }
 
-renameMe.propTypes = {
-  prop: PropTypes.string,
-};
-
-renameMe.defaultProps = {
-  prop: "miguel",
-};
-
-export default renameMe;
+export default CartConnected;
