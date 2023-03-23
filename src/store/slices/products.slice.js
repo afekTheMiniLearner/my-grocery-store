@@ -21,7 +21,6 @@ const productSlice = createSlice({
       state.totalPrice = parseFloat(
         Number(state.totalPrice + price).toFixed(2)
       );
-      debugger;
     },
     removeFromCart(state, action) {
       const productId = action.payload.productId;

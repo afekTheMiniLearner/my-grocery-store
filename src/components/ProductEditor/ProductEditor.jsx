@@ -1,63 +1,60 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import "./Product.scss";
+import "./ProductEditor.scss";
 
-function Product({
+function ProductEditor({
   productId,
   productName,
   selectedCount,
   price,
   onAdd,
   onAddButtonLabel,
-  onRemove,
-  onRemoveButtonLabel,
-  onProductClick,
+  onDelete,
+  onDeleteButtonLabel,
 }) {
   return (
-    <div
-      className="product-container"
-      onClick={() => onProductClick?.(productId)}
-    >
+    <div className="product-editor-container">
       <h3>Product: {productName}</h3>
       <h4>Price: ${price}</h4>
-      {!!selectedCount && (
+      {
         <button
-          className="product-button"
-          onClick={() => onRemove?.(productId)}
+          className="product-editor-button"
+          onClick={() => onDelete?.(productId)}
         >
-          {onRemoveButtonLabel}
+          {onDeleteButtonLabel}
         </button>
-      )}
-      <button className="product-button" onClick={() => onAdd?.(productId)}>
+      }
+      <button
+        className="product-editor-button"
+        onClick={() => onAdd?.(productId)}
+      >
         {onAddButtonLabel} {selectedCount ? `(${selectedCount})` : ""}
       </button>
     </div>
   );
 }
 
-Product.propTypes = {
+ProductEditor.propTypes = {
   productId: PropTypes.string,
   productName: PropTypes.string,
   selectedCount: PropTypes.number,
   price: PropTypes.number,
   onAdd: PropTypes.func,
   onAddButtonLabel: PropTypes.string,
-  onRemove: PropTypes.func,
-  onRemoveButtonLabel: PropTypes.string,
-  onProductClick: PropTypes.func,
+  onDelete: PropTypes.func,
+  onDeleteButtonLabel: PropTypes.string,
 };
 
-Product.defaultProps = {
+ProductEditor.defaultProps = {
   productId: undefined,
   productName: "unnamed",
   selectedCount: 0,
   price: 0,
   onAdd: undefined,
   onAddButtonLabel: "Add to Cart",
-  onRemove: undefined,
-  onRemoveButtonLabel: "Remove from Cart",
-  onProductClick: undefined,
+  onDelete: undefined,
+  onDeleteButtonLabel: "Delete from DB",
 };
 
-export default Product;
+export default ProductEditor;

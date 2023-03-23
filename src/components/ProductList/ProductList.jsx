@@ -4,7 +4,13 @@ import PropTypes from "prop-types";
 import { Product } from "../../base-components";
 import "./ProductList.scss";
 
-function productList({ products, selectedProducts, onAdd, onRemove }) {
+function productList({
+  products,
+  selectedProducts,
+  onAdd,
+  onRemove,
+  onProductClick,
+}) {
   return (
     <div className="product-list-container">
       {products.map((productData) => {
@@ -19,6 +25,7 @@ function productList({ products, selectedProducts, onAdd, onRemove }) {
             selectedCount={selectedProducts[productId] ?? 0}
             onAdd={onAdd}
             onRemove={onRemove}
+            onProductClick={onProductClick}
           />
         );
       })}
@@ -38,11 +45,13 @@ productList.propTypes = {
   selectedProducts: PropTypes.shape({}),
   onRemove: PropTypes.func,
   onAdd: PropTypes.func,
+  onProductClick: PropTypes.func,
 };
 
 productList.defaultProps = {
   onRemove: undefined,
   onAdd: undefined,
+  onProductClick: undefined,
 };
 
 export default productList;
