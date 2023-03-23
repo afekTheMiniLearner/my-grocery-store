@@ -9,7 +9,9 @@ function Product({
   selectedCount,
   price,
   onAdd,
+  onAddButtonLabel,
   onRemove,
+  onRemoveButtonLabel,
 }) {
   return (
     <div className="product-container">
@@ -20,11 +22,11 @@ function Product({
           className="product-button"
           onClick={() => onRemove?.(productId)}
         >
-          Remove from Cart
+          {onRemoveButtonLabel}
         </button>
       )}
       <button className="product-button" onClick={() => onAdd?.(productId)}>
-        Add to Cart {selectedCount ? `(${selectedCount})` : ""}
+        {onAddButtonLabel} {selectedCount ? `(${selectedCount})` : ""}
       </button>
     </div>
   );
@@ -36,7 +38,9 @@ Product.propTypes = {
   selectedCount: PropTypes.number,
   price: PropTypes.number,
   onAdd: PropTypes.func,
+  onAddButtonLabel: PropTypes.string,
   onRemove: PropTypes.func,
+  onRemoveButtonLabel: PropTypes.string,
 };
 
 Product.defaultProps = {
@@ -45,7 +49,9 @@ Product.defaultProps = {
   selectedCount: 0,
   price: 0,
   onAdd: undefined,
+  onAddButtonLabel: "Add to Cart",
   onRemove: undefined,
+  onRemoveButtonLabel: "Remove from Cart",
 };
 
 export default Product;
