@@ -15,7 +15,7 @@
   &:hover {
     caret-color: $primary-color;
   }
-  cursor: url("../../assets/images/edit-cursor.png") !important;
+  cursor: url("../../assets/images/edit-cursor.png"), alias;
 }
 
 .product-button {
