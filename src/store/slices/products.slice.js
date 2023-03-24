@@ -1,16 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { mockProducts } from "../../utils";
 
 const productSlice = createSlice({
   name: "products",
   initialState: {
-    productList: mockProducts,
+    productList: [],
     selectedProducts: {},
     totalPrice: 0,
   },
   reducers: {
     initProducts(state, action) {
-      state.productList = action.payload;
+      state.productList = action.payload.products;
     },
     addToCart(state, action) {
       const productId = action.payload.productId;
@@ -30,7 +29,6 @@ const productSlice = createSlice({
         state.selectedProducts[productId]--;
       }
 
-      console.table({ totalPrice: state.totalPrice, price });
       state.totalPrice = parseFloat(
         Number(state.totalPrice - price).toFixed(2)
       );

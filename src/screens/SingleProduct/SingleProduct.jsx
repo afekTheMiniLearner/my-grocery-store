@@ -1,12 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import { getProductsSelector } from "../../store";
 import { ProductEditor } from "../../components";
-import { mockProducts } from "../../utils";
 
 export default function SingleProduct() {
+  const products = useSelector((state) => getProductsSelector(state));
+  const { productName, price } = products?.find((p) => p.id === productId);
   const { productId } = useParams();
-  const { productName, price } = mockProducts.find((p) => p.id === productId);
 
   return (
     <div

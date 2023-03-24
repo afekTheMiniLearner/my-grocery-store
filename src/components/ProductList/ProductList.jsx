@@ -41,7 +41,6 @@ productList.propTypes = {
       price: PropTypes.number,
     })
   ),
-  // {es1a231-as34opo132-039ska0 : 3}
   selectedProducts: PropTypes.shape({}),
   onRemove: PropTypes.func,
   onAdd: PropTypes.func,
