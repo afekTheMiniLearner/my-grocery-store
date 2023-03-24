@@ -7,8 +7,8 @@ import { ProductEditor } from "../../components";
 
 export default function SingleProduct() {
   const products = useSelector((state) => getProductsSelector(state));
-  const { productName, price } = products?.find((p) => p.id === productId);
   const { productId } = useParams();
+  const { productName, price } = products.find((p) => p.id === productId);
 
   return (
     <div

@@ -24,12 +24,21 @@ function Product({
       {!!selectedCount && (
         <button
           className="product-button"
-          onClick={() => onRemove?.(productId)}
+          onClick={(event) => {
+            event.stopPropagation();
+            onRemove?.(productId);
+          }}
         >
           {onRemoveButtonLabel}
         </button>
       )}
-      <button className="product-button" onClick={() => onAdd?.(productId)}>
+      <button
+        className="product-button"
+        onClick={(event) => {
+          event.stopPropagation();
+          onAdd?.(productId);
+        }}
+      >
         {onAddButtonLabel} {selectedCount ? `(${selectedCount})` : ""}
       </button>
     </div>

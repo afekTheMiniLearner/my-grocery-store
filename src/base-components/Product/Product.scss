@@ -8,10 +8,14 @@
   flex: 1 1 auto;
   padding: 1em;
   max-width: 300px;
+
   background-color: $secondary-color;
   border: 2px black solid;
   border-radius: 10px;
-  cursor: pointer !important;
+  &:hover {
+    caret-color: $primary-color;
+  }
+  cursor: url("../../assets/images/edit-cursor.png") !important;
 }
 
 .product-button {

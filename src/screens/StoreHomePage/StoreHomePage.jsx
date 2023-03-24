@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { TailSpin } from "react-loading-icons";
 
 import { CartConnected, ProductList } from "../../components";
 import { Header } from "../../base-components";
@@ -12,6 +13,7 @@ import {
   getSelectedProductsSelector,
 } from "../../store";
 import { getDataFromDB } from "../../utils";
+import "./StoreHomePage.scss";
 
 export default function StoreHomePage() {
   const dispatch = useDispatch();
@@ -30,27 +32,38 @@ export default function StoreHomePage() {
   });
   const navigate = useNavigate();
   const onProductClick = (productId) => navigate(`/product/${productId}`);
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
     getDataFromDB("http://localhost:3004/ProductsData")
-      .then((data) => initProducts(data))
+      .then((data) => {
+        initProducts(data);
+        setIsDataFetched(true);
+      })
       .catch(() => {});
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <div style={{ margin: "10px" }}>
+  return isDataFetched ? (
+    <div className="home-page-container">
       <Header title={"My grocery store"}>
         <CartConnected />
       </Header>
       <ProductList
-        products={products}
+        products={products || []}
         selectedProducts={selectedProducts}
         onAdd={onAdd}
         onRemove={onRemove}
         onProductClick={onProductClick}
       />
+    </div>
+  ) : (
+    <div className="loading-page-container">
+      <div className="loading-content-wrapper">
+        <TailSpin speed={0.8} height={"10em"} width={"10em"} />
+        <h2>Loading data, please wait...</h2>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,6 @@ export async function getDataFromDB(url) {
     .then((res) => res.json())
     .then((data) => data)
     .catch((e) => {
-      console.log(`error: ${e} while fetching data from: ${url}`);
+      throw Error(`error: ${e} while fetching data from: ${url}`);
     });
 }
