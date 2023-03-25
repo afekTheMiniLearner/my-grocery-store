@@ -1,35 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import "./ProductEditor.scss";
+import { onUpdateHandler } from "../../utils";
 
 function ProductEditor({
   productId,
   productName,
   selectedCount,
   price,
-  onAdd,
-  onAddButtonLabel,
-  onDelete,
+  onUpdateButtonLabel,
   onDeleteButtonLabel,
 }) {
+  const [updatedProductName, setUpdatedProductName] = useState(productName);
+  const [updatedPrice, setUpdatedPrice] = useState(price);
+  const handleProductNameChange = (event) => {
+    if (event.target.value === "" || event.target.value === productName) return;
+    setUpdatedProductName(event.target.value);
+  };
+  const handlePriceChange = (event) => {
+    if (event.target.value === "" || event.target.value === price) return;
+    setUpdatedPrice(parseInt(event.target.value));
+  };
+  const data = {
+    id: productId,
+    productName: updatedProductName,
+    price: updatedPrice,
+  };
+
   return (
     <div className="product-editor-container">
-      <h3>Product: {productName}</h3>
-      <h4>Price: ${price}</h4>
+      <div className="edit-data-container">
+        <h3>Product: {productName}</h3>
+        <input type={"text"} onChange={handleProductNameChange}></input>
+      </div>
+      <div className="edit-data-container">
+        <h4>Price: ${price}</h4>
+        <input type={"number"} onChange={handlePriceChange}></input>
+      </div>
       {
         <button
-          className="product-editor-button"
-          onClick={() => onDelete?.(productId)}
+          className="product-editor-button delete"
+          onClick={() => onUpdateHandler?.(productId)}
         >
           {onDeleteButtonLabel}
         </button>
       }
       <button
         className="product-editor-button"
-        onClick={() => onAdd?.(productId)}
+        onClick={() => onUpdateHandler?.(data, productId)}
       >
-        {onAddButtonLabel} {selectedCount ? `(${selectedCount})` : ""}
+        {onUpdateButtonLabel} {selectedCount ? `(${selectedCount})` : ""}
       </button>
     </div>
   );
@@ -40,8 +61,8 @@ ProductEditor.propTypes = {
   productName: PropTypes.string,
   selectedCount: PropTypes.number,
   price: PropTypes.number,
-  onAdd: PropTypes.func,
-  onAddButtonLabel: PropTypes.string,
+  onUpdate: PropTypes.func,
+  onUpdateButtonLabel: PropTypes.string,
   onDelete: PropTypes.func,
   onDeleteButtonLabel: PropTypes.string,
 };
@@ -51,8 +72,8 @@ ProductEditor.defaultProps = {
   productName: "unnamed",
   selectedCount: 0,
   price: 0,
-  onAdd: undefined,
-  onAddButtonLabel: "Add to Cart",
+  onUpdate: undefined,
+  onUpdateButtonLabel: "Update data",
   onDelete: undefined,
   onDeleteButtonLabel: "Delete from DB",
 };

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { getProductsSelector } from "../../store";
 import { ProductEditor } from "../../components";
+import "./SingleProduct.scss";
 
 export default function SingleProduct() {
   const products = useSelector((state) => getProductsSelector(state));
@@ -11,15 +12,7 @@ export default function SingleProduct() {
   const { productName, price } = products.find((p) => p.id === productId);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "1000px",
-        height: "700px",
-      }}
-    >
+    <div className="single-product-page-container">
       <ProductEditor
         productId={productId}
         productName={productName}

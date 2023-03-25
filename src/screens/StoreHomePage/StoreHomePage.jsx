@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loading-icons";
 
+import "./StoreHomePage.scss";
 import { CartConnected, ProductList } from "../../components";
 import { Header } from "../../base-components";
 import {
@@ -13,7 +14,6 @@ import {
   getSelectedProductsSelector,
 } from "../../store";
 import { getDataFromDB } from "../../utils";
-import "./StoreHomePage.scss";
 
 export default function StoreHomePage() {
   const dispatch = useDispatch();

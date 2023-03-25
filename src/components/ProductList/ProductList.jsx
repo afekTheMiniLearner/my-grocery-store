@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Product } from "../../base-components";
 import "./ProductList.scss";
+import { Product } from "../../base-components";
 
 function productList({
   products,
