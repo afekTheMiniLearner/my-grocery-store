@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { TailSpin } from "react-loading-icons";
 
 import "./StoreHomePage.scss";
 import { CartConnected, ProductList } from "../../components";
-import { Header } from "../../base-components";
+import { Header, Loading } from "../../base-components";
 import {
   addToCartAction,
   removeFromCartAction,
@@ -16,6 +15,8 @@ import {
 import { getDataFromDB } from "../../utils";
 
 export default function StoreHomePage() {
+  const [isDataFetched, setIsDataFetched] = useState(false);
+
   const dispatch = useDispatch();
   const onAdd = (productId) => {
     dispatch(addToCartAction({ productId }));
@@ -26,13 +27,14 @@ export default function StoreHomePage() {
   const initProducts = (products) => {
     dispatch(initProductsAction({ products }));
   };
+
   const products = useSelector((state) => getProductsSelector(state));
   const selectedProducts = useSelector((state) => {
     return getSelectedProductsSelector(state);
   });
+
   const navigate = useNavigate();
   const onProductClick = (productId) => navigate(`/product/${productId}`);
-  const [isDataFetched, setIsDataFetched] = useState(false);
 
   useEffect(() => {
     getDataFromDB("http://localhost:3004/ProductsData")
@@ -59,11 +61,6 @@ export default function StoreHomePage() {
       />
     </div>
   ) : (
-    <div className="loading-page-container">
-      <div className="loading-content-wrapper">
-        <TailSpin stroke="black" speed={0.8} height={"10em"} width={"10em"} />
-        <h2>Loading data, please wait...</h2>
-      </div>
-    </div>
+    <Loading />
   );
 }

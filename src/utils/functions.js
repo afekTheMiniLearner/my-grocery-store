@@ -26,8 +26,27 @@ export async function putDataToDB(url, data) {
     });
 }
 
+export async function deleteFromDB(url) {
+  return await fetch(url, { method: "DELETE" })
+    .then((res) => {
+      if (!res.ok) {
+        throw Error(`error: ${res.status} while updating data at: ${url}`);
+      }
+      return res.json();
+    })
+    .catch((e) => {
+      throw Error(`error: ${e} while updating data at: ${url}`);
+    });
+}
+
 export function onUpdateHandler(data, id) {
   putDataToDB(`http://localhost:3004/ProductsData/${id}`, data)
-    .then((res) => console.log("update success", res))
+    .then((res) => console.log("updated successfully", res))
+    .catch((e) => console.log(e));
+}
+
+export function onDeleteHandler(id) {
+  deleteFromDB(`http://localhost:3004/ProductsData/${id}`)
+    .then((res) => console.log("deleted successfully", res))
     .catch((e) => console.log(e));
 }

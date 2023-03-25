@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import "./ProductEditor.scss";
-import { onUpdateHandler } from "../../utils";
+import { onUpdateHandler, onDeleteHandler } from "../../utils";
 
 function ProductEditor({
   productId,
@@ -14,14 +14,16 @@ function ProductEditor({
 }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);
   const [updatedPrice, setUpdatedPrice] = useState(price);
-  const handleProductNameChange = (event) => {
+
+  const onProductNameChange = (event) => {
     if (event.target.value === "" || event.target.value === productName) return;
     setUpdatedProductName(event.target.value);
   };
-  const handlePriceChange = (event) => {
+  const onPriceChange = (event) => {
     if (event.target.value === "" || event.target.value === price) return;
     setUpdatedPrice(parseInt(event.target.value));
   };
+
   const data = {
     id: productId,
     productName: updatedProductName,
@@ -32,16 +34,16 @@ function ProductEditor({
     <div className="product-editor-container">
       <div className="edit-data-container">
         <h3>Product: {productName}</h3>
-        <input type={"text"} onChange={handleProductNameChange}></input>
+        <input type={"text"} onChange={onProductNameChange}></input>
       </div>
       <div className="edit-data-container">
         <h4>Price: ${price}</h4>
-        <input type={"number"} onChange={handlePriceChange}></input>
+        <input type={"number"} onChange={onPriceChange}></input>
       </div>
       {
         <button
           className="product-editor-button delete"
-          onClick={() => onUpdateHandler?.(productId)}
+          onClick={() => onDeleteHandler?.(productId)}
         >
           {onDeleteButtonLabel}
         </button>
