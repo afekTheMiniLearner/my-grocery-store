@@ -61,7 +61,7 @@ export default function StoreHomePage() {
   ) : (
     <div className="loading-page-container">
       <div className="loading-content-wrapper">
-        <TailSpin speed={0.8} height={"10em"} width={"10em"} />
+        <TailSpin stroke="black" speed={0.8} height={"10em"} width={"10em"} />
         <h2>Loading data, please wait...</h2>
       </div>
     </div>
