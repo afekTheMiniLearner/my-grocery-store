@@ -32,9 +32,7 @@ export default function StoreHomePage() {
   const selectedProducts = useSelector((state) => {
     return getSelectedProductsSelector(state);
   });
-
   const navigate = useNavigate();
-  const onProductClick = (productId) => navigate(`/product/${productId}`);
 
   useEffect(() => {
     getDataFromDB("http://localhost:3004/ProductsData")
@@ -50,6 +48,9 @@ export default function StoreHomePage() {
   return isDataFetched ? (
     <div className="home-page-container">
       <Header title={"My grocery store"}>
+        <button onClick={() => navigate("/product/new")}>
+          Add new product
+        </button>
         <CartConnected />
       </Header>
       <ProductList
@@ -57,7 +58,7 @@ export default function StoreHomePage() {
         selectedProducts={selectedProducts}
         onAdd={onAdd}
         onRemove={onRemove}
-        onProductClick={onProductClick}
+        onProductClick={(productId) => navigate(`/product/${productId}`)}
       />
     </div>
   ) : (
