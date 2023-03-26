@@ -40,14 +40,14 @@ function ProductEditor({
         <h4>Price: ${price}</h4>
         <input type={"number"} onChange={onPriceChange}></input>
       </div>
-      {
-        <button
-          className="product-editor-button delete"
-          onClick={() => onDeleteHandler?.(productId)}
-        >
-          {onDeleteButtonLabel}
-        </button>
-      }
+
+      <button
+        className="product-editor-button delete"
+        onClick={() => onDeleteHandler?.(productId)}
+      >
+        {onDeleteButtonLabel}
+      </button>
+
       <button
         className="product-editor-button"
         onClick={() => onUpdateHandler?.(data, productId)}
