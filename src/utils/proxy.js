@@ -1,33 +1,29 @@
-import { DB_PRODUCTS_URL } from './consts';
+export default class Proxy {
+  constructor(DB_URL) {
+    this.DB_URL = DB_URL;
+  }
 
-export async function getDataFromDB(url) {
-  return await fetch(url)
-    .then((res) => res.json())
-    .then((data) => data)
-    .catch((e) => {
-      throw Error(`error: ${e} while fetching data from: ${url}`);
-    });
+  getRequest() {
+    this.url;
+  }
+
+  static postRequest;
 }
 
-export function onGetDataHandler() {
-  getDataFromDB(DB_PRODUCTS_URL)
-    .then((data) => {
-      initProducts(data);
-      onDataFetch(true);
-    })
-    .catch(() => {});
-}
-
-export async function deleteFromDB(url) {
-  return await fetch(url, { method: 'DELETE' })
+export function fetchData(url, onDataFetch, initFn) {
+  fetch(url)
     .then((res) => {
       if (!res.ok) {
-        throw Error(`error: ${res.status} while deleting data at: ${url}`);
+        throw Error(`error: ${res.status} while fetching data from: ${url}`);
       }
       return res.json();
     })
+    .then((data) => {
+      initFn(data);
+      onDataFetch(true);
+    })
     .catch((e) => {
-      throw Error(`error: ${e} while deleting data at: ${url}`);
+      throw Error(`error: ${e} while fetching data from: ${url}`);
     });
 }
 

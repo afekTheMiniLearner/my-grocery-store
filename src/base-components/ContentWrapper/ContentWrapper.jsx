@@ -1,31 +1,24 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./ContentWrapper.scss";
+import './ContentWrapper.scss';
 
-function ContentWrapper({ children, classes }) {
+function ContentWrapper({ children, onClick, classes }) {
   return (
-    <div className={`edit-data-container ${classes}`}>
-      <h4>{label} </h4>
-      <input type={type} onChange={onChangeHandler} value={inputState}></input>
+    <div className={`content-wrapper ${classes}`} onClick={onClick}>
+      {children}
     </div>
   );
 }
 
 ContentWrapper.propTypes = {
-  label: PropTypes.string,
-  inputState: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChangeHandler: PropTypes.number,
-  type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onClick: PropTypes.func,
   classes: PropTypes.string,
 };
 
 ContentWrapper.defaultProps = {
-  label: undefined,
-  inputState: "",
-  onChangeHandler: undefined,
-  type: "text",
-  classes: "",
+  onClick: undefined,
+  classes: '',
 };
 
 export default ContentWrapper;

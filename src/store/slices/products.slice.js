@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const productSlice = createSlice({
-  name: "products",
+  name: 'products',
   initialState: {
     productList: [],
     selectedProducts: {},
@@ -14,7 +14,7 @@ const productSlice = createSlice({
     addToCart(state, action) {
       const productId = action.payload.productId;
       const { price } = state.productList.find((p) => p.id === productId);
-      
+
       state.selectedProducts[productId] ||= 0;
       state.selectedProducts[productId]++;
       state.totalPrice = parseFloat(

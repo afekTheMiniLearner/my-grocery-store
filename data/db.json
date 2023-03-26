@@ -2,8 +2,8 @@
   "ProductsData": [
     {
       "id": "81ff8102-d0dc-4ce1-b944-3a0b4c787c1b",
-      "productName": "oil - coco- coco",
-      "price": 85
+      "productName": "beef tallow",
+      "price": 100
     },
     {
       "id": "a707701a-3570-482a-8ec3-bb1fa888bcb7",
@@ -94,6 +94,11 @@
       "id": "bfb847ae-63e4-4629-a23c-8c82067db26a",
       "productName": "hola papito",
       "price": 312
+    },
+    {
+      "id": "7927d279-e020-4187-b100-2518897df66e",
+      "productName": "magnesium",
+      "price": 20
     }
   ]
 }

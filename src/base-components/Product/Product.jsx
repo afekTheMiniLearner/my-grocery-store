@@ -1,72 +1,63 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./Product.scss";
+import ContentWrapper from '../ContentWrapper/ContentWrapper';
+import ActionButton from '../ActionButton/ActionButton';
 
 function Product({
-  productId,
+  id,
   productName,
-  selectedCount,
   price,
+  selectedCount,
+  onClick,
   onAdd,
-  onAddButtonLabel,
   onRemove,
-  onRemoveButtonLabel,
-  onProductClick,
 }) {
   return (
-    <div
-      className="product-container"
-      onClick={() => onProductClick?.(productId)}
+    <ContentWrapper
+      onClick={id ? () => onClick?.(id) : onClick?.()}
+      classes="product"
     >
       <h3>Product: {productName}</h3>
       <h4>Price: ${price}</h4>
       {!!selectedCount && (
-        <button
-          className="product-button"
-          onClick={(event) => {
+        <ActionButton
+          label="Remove from cart"
+          onClickHandler={(event) => {
             event.stopPropagation();
-            onRemove?.(productId);
+            onRemove();
           }}
-        >
-          {onRemoveButtonLabel}
-        </button>
+        />
       )}
-      <button
-        className="product-button"
-        onClick={(event) => {
+      <ActionButton
+        label="Add to Cart"
+        onClickHandler={(event) => {
           event.stopPropagation();
-          onAdd?.(productId);
+          onAdd();
         }}
-      >
-        {onAddButtonLabel} {selectedCount ? `(${selectedCount})` : ""}
-      </button>
-    </div>
+      />
+    </ContentWrapper>
   );
 }
 
 Product.propTypes = {
-  productId: PropTypes.string,
+  id: PropTypes.string,
   productName: PropTypes.string,
-  selectedCount: PropTypes.number,
   price: PropTypes.number,
+  selectedCount: PropTypes.number,
+  onClick: PropTypes.func,
   onAdd: PropTypes.func,
-  onAddButtonLabel: PropTypes.string,
   onRemove: PropTypes.func,
-  onRemoveButtonLabel: PropTypes.string,
-  onProductClick: PropTypes.func,
 };
 
 Product.defaultProps = {
-  productId: undefined,
-  productName: "unnamed",
-  selectedCount: 0,
+  id: undefined,
+  productName: undefined,
   price: 0,
+  selectedCount: 0,
+  onClick: undefined,
   onAdd: undefined,
-  onAddButtonLabel: "Add to Cart",
   onRemove: undefined,
-  onRemoveButtonLabel: "Remove from Cart",
-  onProductClick: undefined,
 };
 
 export default Product;
