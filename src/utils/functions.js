@@ -9,15 +9,6 @@ export async function getDataFromDB(url) {
     });
 }
 
-export function onGetDataHandler() {
-  getDataFromDB(DB_PRODUCTS_URL)
-    .then((data) => {
-      initProducts(data);
-      onDataFetch(true);
-    })
-    .catch(() => {});
-}
-
 export async function deleteFromDB(url) {
   return await fetch(url, { method: 'DELETE' })
     .then((res) => {

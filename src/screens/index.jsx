@@ -17,8 +17,8 @@ export default function Router() {
         <Route path="/" element={<StoreHomePage />} />
         <Route path="/product/new" element={<NewProductPage />} />
         <Route path="/product/:productId" element={<SingleProduct />} />
-        <Route path="/not-found-404" element={<NotFound />} />
-        <Route path="*" element={<Navigate to="/not-found-404" />} />
+        <Route path="/404" element={<NotFound />} />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Switch>
     </BrowserRouter>
   );
