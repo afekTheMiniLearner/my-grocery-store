@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import './HomePage.scss';
 import { CartConnected, ProductList } from '../../components';
-import { Header } from '../../base-components';
+import { Header, ActionButton } from '../../base-components';
 
 export default function StoreHomePage() {
   const navigate = useNavigate();
@@ -11,9 +11,10 @@ export default function StoreHomePage() {
   return (
     <div className="home-page-container">
       <Header title="My grocery store">
-        <button onClick={() => navigate('/product/new')}>
-          Add new product
-        </button>
+        <ActionButton
+          label="Create new product"
+          onClickHandler={() => navigate('/product/new')}
+        />
         <CartConnected />
       </Header>
       <ProductList />
