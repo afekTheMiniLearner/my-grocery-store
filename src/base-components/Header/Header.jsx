@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./Header.scss";
-import Title from "../Title/Title";
+import './Header.scss';
+import Title from '../Title/Title';
 
 function Header({ title, children }) {
   return (
     <div className="header-container">
       <Title title={title} />
-      {children}
+      <div className="header-children-container">{children}</div>
     </div>
   );
 }
@@ -18,7 +18,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  title: "untitled",
+  title: 'untitled',
 };
 
 export default Header;

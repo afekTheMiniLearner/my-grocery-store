@@ -3,7 +3,6 @@
 .header-container {
   position: sticky;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   top: 0;
 
@@ -13,4 +12,14 @@
   border: 2px black solid;
   border-radius: 10px;
   background-color: $primary-color;
+
+  .title {
+    margin-right: auto;
+  }
+}
+
+.header-children-container {
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
 }
