@@ -1,13 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./ActionButton.scss";
+import './ActionButton.scss';
 
 function ActionButton({ id, label, onClickHandler, classes }) {
   return (
     <button
       className={`action-button-container ${classes}`}
-      onClick={() => (id ? onClickHandler?.(id) : onClickHandler?.())}
+      onClick={(event) => {
+        event.stopPropagation();
+        onClickHandler();
+      }}
     >
       {label}
     </button>
@@ -25,7 +28,7 @@ ActionButton.defaultProps = {
   id: undefined,
   label: undefined,
   onClickHandler: undefined,
-  classes: "",
+  classes: '',
 };
 
 export default ActionButton;

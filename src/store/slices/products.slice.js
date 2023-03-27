@@ -13,6 +13,7 @@ const productSlice = createSlice({
     },
     addToCart(state, action) {
       const id = action.payload.id;
+
       const { price } = state.productList.find((p) => p.id === id);
 
       state.selectedProducts[id] ||= 0;

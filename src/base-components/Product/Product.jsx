@@ -17,21 +17,9 @@ function Product({
       <h3>Product: {productName}</h3>
       <h4>Price: ${price}</h4>
       {!!selectedCount && (
-        <ActionButton
-          label="Remove from cart"
-          onClickHandler={(event) => {
-            event.stopPropagation();
-            onRemove();
-          }}
-        />
+        <ActionButton label="Remove from cart" onClickHandler={onRemove} />
       )}
-      <ActionButton
-        label="Add to Cart"
-        onClickHandler={(event) => {
-          event.stopPropagation();
-          onAdd();
-        }}
-      />
+      <ActionButton label="Add to Cart" onClickHandler={onAdd} />
     </ContentWrapper>
   );
 }
