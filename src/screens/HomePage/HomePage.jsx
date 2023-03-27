@@ -12,8 +12,9 @@ export default function StoreHomePage() {
     <div className="home-page-container">
       <Header title="My grocery store">
         <ActionButton
-          label="Create new product"
+          label="Create product"
           onClickHandler={() => navigate('/product/new')}
+          classes="circular-button"
         />
         <CartConnected />
       </Header>

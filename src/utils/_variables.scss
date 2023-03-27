@@ -1,9 +1,8 @@
-$primary-color: greenyellow;
-$secondary-color: lightgrey;
+$primary-color: rgb(101, 132, 224);
+$secondary-color: #ffe5b4;
 
 @mixin centered-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-

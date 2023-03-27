@@ -45,7 +45,7 @@ function ProductEditor({ id, productName, price }) {
       <ActionButton
         label="Delete product"
         onClickHandler={() => ProductsProxy.delete(id)}
-        classes="delete"
+        classes="delete-button"
       />
       <ActionButton
         label="Update product"
