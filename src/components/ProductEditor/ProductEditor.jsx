@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { onUpdateHandler, onDeleteHandler } from '../../utils';
+import { ProductsProxy } from '../../utils';
 import {
   ActionButton,
   ContentWrapper,
   LabeledInput,
 } from '../../base-components';
 
-function ProductEditor(id, productName, price) {
+function ProductEditor({ id, productName, price }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);
   const [updatedPrice, setUpdatedPrice] = useState(price);
 
@@ -27,6 +27,7 @@ function ProductEditor(id, productName, price) {
     price: updatedPrice,
   };
 
+  console.log(productName, price);
   return (
     <ContentWrapper classes="product">
       <LabeledInput
@@ -43,12 +44,12 @@ function ProductEditor(id, productName, price) {
       />
       <ActionButton
         label="Delete product"
-        onClickHandler={() => onDeleteHandler?.(id)}
+        onClickHandler={() => ProductsProxy.delete(id)}
         classes="delete"
       />
       <ActionButton
         label="Update product"
-        onClickHandler={() => onUpdateHandler?.(data, id)}
+        onClickHandler={() => ProductsProxy.put(data, id)}
       />
     </ContentWrapper>
   );
@@ -63,7 +64,7 @@ ProductEditor.propTypes = {
 ProductEditor.defaultProps = {
   id: undefined,
   productName: 'product',
-  price: '0',
+  price: 0,
 };
 
 export default ProductEditor;

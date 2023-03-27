@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
-import { onCreationHandler } from '../../utils';
+import { ProductsProxy } from '../../utils';
 import {
   ActionButton,
   ContentWrapper,
@@ -49,7 +49,7 @@ function ProductCreator() {
         label="Create product"
         onClickHandler={() => {
           if (!updatedProductName || !updatedPrice) return;
-          onCreationHandler?.(data.current);
+          ProductsProxy.post(data.current);
         }}
       />
     </ContentWrapper>

@@ -8,7 +8,7 @@
     {
       "id": "a707701a-3570-482a-8ec3-bb1fa888bcb7",
       "productName": "just like that course",
-      "price": 9998
+      "price": 10002
     },
     {
       "id": "8ab6e340-cbec-4f71-ab41-2df4e07ce6cf",
@@ -99,6 +99,16 @@
       "id": "7927d279-e020-4187-b100-2518897df66e",
       "productName": "magnesium",
       "price": 20
+    },
+    {
+      "id": "a1497c68-5189-4713-9a38-ef347211d40f",
+      "productName": "apple cider ",
+      "price": 5
+    },
+    {
+      "id": "3aec4949-b79e-4c65-9267-765294c4c1c9",
+      "productName": "potassium chlorid",
+      "price": 19
     }
   ]
 }

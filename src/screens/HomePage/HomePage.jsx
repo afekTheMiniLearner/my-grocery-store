@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './StoreHomePage.scss';
+import './HomePage.scss';
 import { CartConnected, ProductList } from '../../components';
 import { Header } from '../../base-components';
 

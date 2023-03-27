@@ -12,21 +12,21 @@ const productSlice = createSlice({
       state.productList = action.payload.products;
     },
     addToCart(state, action) {
-      const productId = action.payload.productId;
-      const { price } = state.productList.find((p) => p.id === productId);
+      const id = action.payload.id;
+      const { price } = state.productList.find((p) => p.id === id);
 
-      state.selectedProducts[productId] ||= 0;
-      state.selectedProducts[productId]++;
+      state.selectedProducts[id] ||= 0;
+      state.selectedProducts[id]++;
       state.totalPrice = parseFloat(
         Number(state.totalPrice + price).toFixed(2)
       );
     },
     removeFromCart(state, action) {
-      const productId = action.payload.productId;
-      const { price } = state.productList.find((p) => p.id === productId);
+      const id = action.payload.id;
+      const { price } = state.productList.find((p) => p.id === id);
 
-      if (state.selectedProducts[productId]) {
-        state.selectedProducts[productId]--;
+      if (state.selectedProducts[id]) {
+        state.selectedProducts[id]--;
       }
 
       state.totalPrice = parseFloat(

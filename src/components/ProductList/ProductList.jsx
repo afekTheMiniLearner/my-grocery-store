@@ -11,7 +11,7 @@ import {
   initProductsAction,
   removeFromCartAction,
 } from '../../store';
-import { getDataFromDB, DB_PRODUCTS_URL } from '../../utils';
+import { ProductsProxy } from '../../utils';
 
 function ProductList() {
   const dispatch = useDispatch();
@@ -23,18 +23,18 @@ function ProductList() {
     return getSelectedProductsSelector(state);
   });
 
-  const onAdd = (productId) => {
-    dispatch(addToCartAction({ productId }));
+  const onAdd = (id) => {
+    dispatch(addToCartAction({ id }));
   };
-  const onRemove = (productId) => {
-    dispatch(removeFromCartAction({ productId }));
+  const onRemove = (id) => {
+    dispatch(removeFromCartAction({ id }));
   };
   const initProducts = (products) => {
     dispatch(initProductsAction({ products }));
   };
 
   useEffect(() => {
-    getDataFromDB(DB_PRODUCTS_URL)
+    ProductsProxy.getAllData()
       .then((data) => {
         initProducts(data);
         setIsDataFetched(true);

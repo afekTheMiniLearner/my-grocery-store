@@ -1,11 +1,15 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
 .header-container {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
+
   padding: 1em;
   margin-bottom: 10px;
+
   border: 2px black solid;
   border-radius: 10px;
   background-color: $primary-color;

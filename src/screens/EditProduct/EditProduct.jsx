@@ -8,17 +8,13 @@ import { ProductEditor } from '../../components';
 
 export default function EditProduct() {
   const products = useSelector((state) => getProductsSelector(state));
-  const { productId } = useParams();
-  const { productName, price } = products.find((p) => p.id === productId);
+  const { id } = useParams();
+  const { productName, price } = products.find((p) => p.id === id);
 
   return (
     <div className="product-modify-container">
       <Header title="Edit product:" />
-      <ProductEditor
-        productId={productId}
-        productName={productName}
-        price={price}
-      />
+      <ProductEditor id={id} productName={productName} price={price} />
     </div>
   );
 }
