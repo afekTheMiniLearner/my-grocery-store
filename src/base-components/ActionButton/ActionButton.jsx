@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ActionButton.scss';
 
-function ActionButton({ id, label, onClickHandler, classes }) {
+function ActionButton({ label, onClickHandler, classes }) {
   return (
     <button
       className={`action-button-container ${classes}`}
@@ -18,14 +18,12 @@ function ActionButton({ id, label, onClickHandler, classes }) {
 }
 
 ActionButton.propTypes = {
-  id: PropTypes.string,
   label: PropTypes.string,
   onClickHandler: PropTypes.func,
   classes: PropTypes.string,
 };
 
 ActionButton.defaultProps = {
-  id: undefined,
   label: undefined,
   onClickHandler: undefined,
   classes: '',
