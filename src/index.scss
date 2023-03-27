@@ -3,6 +3,16 @@
   src: url('./assets/fonts/Ubuntu.ttf');
 }
 
+body,
+html,
+#master,
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 body {
   font-family: 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;

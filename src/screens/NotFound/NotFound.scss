@@ -1,0 +1,5 @@
+@import '../../utils/variables';
+
+.not-found-page-container {
+  @include centered-flex;
+}
