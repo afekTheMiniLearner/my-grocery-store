@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import './ProductList.scss';
-import { Product } from '../../base-components';
+import { Loading, Product } from '../../base-components';
 import {
   addToCartAction,
   getProductsSelector,
@@ -12,13 +11,12 @@ import {
   initProductsAction,
   removeFromCartAction,
 } from '../../store';
-import { getDataFromDB } from '../../utils';
-import { DB_PRODUCTS_URL } from '../../utils';
-import { useEffect } from 'react';
+import { getDataFromDB, DB_PRODUCTS_URL } from '../../utils';
 
-function ProductList({ onDataFetch }) {
+function ProductList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
   const products = useSelector((state) => getProductsSelector(state));
   const selectedProducts = useSelector((state) => {
@@ -39,41 +37,34 @@ function ProductList({ onDataFetch }) {
     getDataFromDB(DB_PRODUCTS_URL)
       .then((data) => {
         initProducts(data);
-        onDataFetch(true);
+        setIsDataFetched(true);
       })
       .catch(() => {});
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
+  return isDataFetched ? (
     <div className="product-list-container">
       {products.map((productData) => {
-        const { id: productId, productName, price } = productData;
+        const { id, productName, price } = productData;
 
         return (
           <Product
-            key={productId}
-            productId={productId}
+            key={id}
             productName={productName}
             price={price}
-            selectedCount={selectedProducts[productId] ?? 0}
-            onClick={(productId) => navigate(`/product/${productId}`)}
+            selectedCount={selectedProducts[id] ?? 0}
+            onClick={() => navigate(`/product/${id}`)}
             onAdd={onAdd}
             onRemove={onRemove}
           ></Product>
         );
       })}
     </div>
+  ) : (
+    <Loading />
   );
 }
-
-ProductList.propTypes = {
-  onDataFetch: PropTypes.func,
-};
-
-ProductList.defaultProps = {
-  onDataFetch: undefined,
-};
 
 export default ProductList;

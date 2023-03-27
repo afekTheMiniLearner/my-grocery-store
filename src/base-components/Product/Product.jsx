@@ -5,7 +5,6 @@ import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import ActionButton from '../ActionButton/ActionButton';
 
 function Product({
-  id,
   productName,
   price,
   selectedCount,
@@ -14,10 +13,7 @@ function Product({
   onRemove,
 }) {
   return (
-    <ContentWrapper
-      onClick={id ? () => onClick?.(id) : onClick?.()}
-      classes="product"
-    >
+    <ContentWrapper onClick={onClick} classes="product custom-cursor-edit">
       <h3>Product: {productName}</h3>
       <h4>Price: ${price}</h4>
       {!!selectedCount && (
@@ -41,7 +37,6 @@ function Product({
 }
 
 Product.propTypes = {
-  id: PropTypes.string,
   productName: PropTypes.string,
   price: PropTypes.number,
   selectedCount: PropTypes.number,
@@ -51,7 +46,6 @@ Product.propTypes = {
 };
 
 Product.defaultProps = {
-  id: undefined,
   productName: undefined,
   price: 0,
   selectedCount: 0,
