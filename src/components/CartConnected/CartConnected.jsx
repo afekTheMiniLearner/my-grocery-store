@@ -1,18 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { Cart } from "../../base-components";
+import { Cart } from '../../base-components';
 import {
   getSelectedProductsSelector,
   getTotalPriceSelector,
-} from "../../store";
+} from '../../store';
 
 function CartConnected() {
-  const selectedProducts = useSelector((state) => {
-    return getSelectedProductsSelector(state);
-  });
-  const totalPrice = useSelector((state) => {
-    return getTotalPriceSelector(state);
+  const { selectedProducts, totalPrice } = useSelector((state) => {
+    return {
+      selectedProducts: getSelectedProductsSelector(state),
+      totalPrice: getTotalPriceSelector(state),
+    };
   });
 
   const totalSelected = Object.values(selectedProducts).reduce(

@@ -18,9 +18,11 @@ function ProductList() {
   const navigate = useNavigate();
   const [isDataFetched, setIsDataFetched] = useState(false);
 
-  const products = useSelector((state) => getProductsSelector(state));
-  const selectedProducts = useSelector((state) => {
-    return getSelectedProductsSelector(state);
+  const { products, selectedProducts } = useSelector((state) => {
+    return {
+      products: getProductsSelector(state),
+      selectedProducts: getSelectedProductsSelector(state),
+    };
   });
 
   const onAdd = (id) => {

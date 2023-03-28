@@ -3,6 +3,54 @@ export default class ProxyDB {
     this.DB_URL = DB_URL;
   }
 
+  async getAllData() {
+    const url = this.DB_URL;
+    const method = 'GET';
+    let response;
+
+    await fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw Error(`error:${res.status},method:${method},url:${url}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(`${method} Request done successfully`);
+        response = data;
+      })
+      .catch((e) => {
+        console.log(e);
+        response = null;
+      });
+
+    return response;
+  }
+
+  async getData(id) {
+    const url = `${this.DB_URL}/${id}`;
+    const method = 'GET';
+    let response;
+
+    await fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw Error(`error:${res.status},method:${method},url:${url}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(`${method} Request done successfully`);
+        response = data;
+      })
+      .catch((e) => {
+        console.log(e);
+        response = null;
+      });
+
+    return response;
+  }
+
   async post(data) {
     const url = this.DB_URL;
     const method = 'POST';
@@ -21,7 +69,7 @@ export default class ProxyDB {
         }
         return res.json();
       })
-      .then((data) => {
+      .then(() => {
         console.log(`${method} Request done successfully`);
         response = true;
       })
@@ -29,6 +77,8 @@ export default class ProxyDB {
         console.log(e);
         response = false;
       });
+
+    return response;
   }
 
   async put(data, id) {
@@ -49,37 +99,13 @@ export default class ProxyDB {
         }
         return res.json();
       })
-      .then((data) => {
+      .then(() => {
         console.log(`${method} Request done successfully`);
         response = true;
       })
       .catch((e) => {
         console.log(e);
         response = false;
-      });
-
-    return response;
-  }
-
-  async getAllData() {
-    const url = this.DB_URL;
-    const method = 'GET';
-    let response;
-
-    await fetch(this.DB_URL)
-      .then((res) => {
-        if (!res.ok) {
-          throw Error(`error:${res.status},method:${method},url:${url}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        console.log(`${method} Request done successfully`);
-        response = data;
-      })
-      .catch((e) => {
-        console.log(e);
-        response = null;
       });
 
     return response;
