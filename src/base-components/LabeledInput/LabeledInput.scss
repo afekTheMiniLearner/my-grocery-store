@@ -1,21 +1,37 @@
-@import "../../utils/variables";
+@import '../../utils/variables';
 
-.input-field-container {
+.labeled-input-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
   gap: 30px;
-
-  > * {
-    width: 100%;
-  }
 
   input {
     border-radius: 5px;
     border: 2px black solid;
     padding: 10px;
-    height: max-content;
   }
+
+  h4 {
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  &.price-input {
+
+
+    .input-container {
+      &::after {
+        content: '$';
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

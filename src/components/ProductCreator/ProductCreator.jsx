@@ -49,6 +49,7 @@ function ProductCreator({ navigatePath }) {
         inputState={updatedPrice}
         onChangeHandler={onPriceChange}
         type="number"
+        classes="price-input"
       />
       <ActionButton
         label="Create product"

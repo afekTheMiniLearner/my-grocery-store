@@ -18,7 +18,7 @@
     {
       "id": "ee017ab4-9325-4b25-be27-b1fca1d7b8ca",
       "productName": "Bread - Endaglish Muffin",
-      "price": 65
+      "price": 66
     },
     {
       "id": "8b7a6e33-125e-4300-8c06-625b33ea35ca",
@@ -51,14 +51,14 @@
       "price": 79
     },
     {
-      "id": "465641ac-a59d-4000-84ee-e33cdc8222b7",
-      "productName": "Iced Tea - Lemon, 340ml",
-      "price": 88
+      "productName": "Lemon",
+      "price": 88,
+      "id": "465641ac-a59d-4000-84ee-e33cdc8222b7"
     },
     {
-      "id": "7d9af14e-be70-486a-9d0f-6984bd6cf148",
-      "productName": "Aromat Spice / Seasoning",
-      "price": 13
+      "productName": "Aromat Spice",
+      "price": 16,
+      "id": "7d9af14e-be70-486a-9d0f-6984bd6cf148"
     },
     {
       "id": "d02837a3-ef00-4bd0-a21d-e2bf7f158a8a",
@@ -82,8 +82,8 @@
     },
     {
       "id": "bfb847ae-63e4-4629-a23c-8c82067db26a",
-      "productName": "hola papito",
-      "price": 312
+      "productName": "Coca cola",
+      "price": 8
     },
     {
       "id": "7927d279-e020-4187-b100-2518897df66e",
@@ -109,6 +109,16 @@
       "id": "a511e3e8-6424-40d4-9693-21656dcade10",
       "productName": "Pencil",
       "price": 1
+    },
+    {
+      "id": "6c5d5023-ac2a-4997-92d9-51a06504486a",
+      "productName": "Squash",
+      "price": 2
+    },
+    {
+      "id": "57080fb8-20b3-46f7-b16a-38e308baae58",
+      "productName": "Tomato",
+      "price": 5
     }
   ]
 }

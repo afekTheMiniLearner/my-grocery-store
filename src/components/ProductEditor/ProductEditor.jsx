@@ -17,18 +17,16 @@ function ProductEditor({ id, productName, price, navigatePath }) {
   const shouldNavigate = !!navigatePath;
 
   const onProductNameChange = (event) => {
-    if (event.target.value === '') return;
     setUpdatedProductName(event.target.value);
   };
   const onPriceChange = (event) => {
-    if (event.target.value === '') return;
-    setUpdatedPrice(parseInt(event.target.value));
+    const p = event.target.value;
+    setUpdatedPrice(parseInt(p < 0 ? 0 : p));
   };
 
   const data = {
-    id,
-    productName: updatedProductName,
-    price: updatedPrice,
+    productName: updatedProductName || productName,
+    price: updatedPrice || price,
   };
 
   return (
@@ -42,8 +40,9 @@ function ProductEditor({ id, productName, price, navigatePath }) {
       <LabeledInput
         inputState={updatedPrice}
         onChangeHandler={onPriceChange}
-        label="Price:"
+        label="Price :"
         type="number"
+        classes="price-input"
       />
       <ActionButton
         label="Delete product"

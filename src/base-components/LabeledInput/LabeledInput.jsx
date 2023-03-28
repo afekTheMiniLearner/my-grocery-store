@@ -1,13 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./LabeledInput.scss";
+import './LabeledInput.scss';
 
 function LabeledInput({ label, inputState, onChangeHandler, type, classes }) {
   return (
-    <div className={`input-field-container ${classes}`}>
+    <div className={`labeled-input-container ${classes}`}>
       <h4>{label} </h4>
-      <input type={type} onChange={onChangeHandler} value={inputState}></input>
+      <div className='input-container'>
+        <input
+          type={type}
+          onChange={onChangeHandler}
+          value={inputState}
+        ></input>
+      </div>
     </div>
   );
 }
@@ -22,10 +28,10 @@ LabeledInput.propTypes = {
 
 LabeledInput.defaultProps = {
   label: undefined,
-  inputState: "",
+  inputState: '',
   onChangeHandler: undefined,
-  type: "text",
-  classes: "",
+  type: 'text',
+  classes: '',
 };
 
 export default LabeledInput;
