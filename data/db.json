@@ -2,28 +2,28 @@
   "ProductsData": [
     {
       "id": "81ff8102-d0dc-4ce1-b944-3a0b4c787c1b",
-      "productName": "beef tallow",
+      "productName": "Beef tallow",
       "price": 100
     },
     {
       "id": "a707701a-3570-482a-8ec3-bb1fa888bcb7",
-      "productName": "just like that course",
-      "price": 10002
+      "productName": "Cucumber",
+      "price": 4
     },
     {
       "id": "8ab6e340-cbec-4f71-ab41-2df4e07ce6cf",
-      "productName": "Dc - Frozen Momji",
-      "price": 21
+      "productName": "Strawberries",
+      "price": 19
     },
     {
       "id": "ee017ab4-9325-4b25-be27-b1fca1d7b8ca",
-      "productName": "Bread - English Muffin",
-      "price": 73
+      "productName": "Bread - Endaglish Muffin",
+      "price": 65
     },
     {
       "id": "8b7a6e33-125e-4300-8c06-625b33ea35ca",
       "productName": "Bananas",
-      "price": 42
+      "price": 5
     },
     {
       "id": "8e82c2a1-5f77-4735-a658-3879b9d95ecd",
@@ -31,19 +31,14 @@
       "price": 50
     },
     {
-      "id": "e96547fa-3afe-4dfd-9e78-0c0d742227ef",
-      "productName": "Pastry - Choclate Baked",
-      "price": 54
-    },
-    {
       "id": "fcede1f0-a116-4900-bf9e-7823164d0758",
       "productName": "Buffalo - Tenderloin",
-      "price": 64
+      "price": 58
     },
     {
       "id": "144f885a-af86-4791-a7d4-11a8dd963b9f",
       "productName": "Relish",
-      "price": 85
+      "price": 79
     },
     {
       "id": "32875f39-aced-4ed6-a157-e4cfcf7b6126",
@@ -92,7 +87,7 @@
     },
     {
       "id": "7927d279-e020-4187-b100-2518897df66e",
-      "productName": "magnesium",
+      "productName": "Magnesium",
       "price": 20
     },
     {
@@ -102,8 +97,18 @@
     },
     {
       "id": "3aec4949-b79e-4c65-9267-765294c4c1c9",
-      "productName": "potassium chlorid",
+      "productName": "Potassium chlorid",
       "price": 19
+    },
+    {
+      "id": "54960909-2939-4741-afe4-d018885bd337",
+      "productName": "Water",
+      "price": 2
+    },
+    {
+      "id": "a511e3e8-6424-40d4-9693-21656dcade10",
+      "productName": "Pencil",
+      "price": 1
     }
   ]
 }

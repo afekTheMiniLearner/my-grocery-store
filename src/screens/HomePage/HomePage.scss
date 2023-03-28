@@ -1,19 +1,15 @@
 @import '../../utils/variables';
 
-.home-page-container {
-  margin: 7px;
+.header-container {
+  button {
+    background-color: $secondary-color;
+    border-radius: 5px;
+    border: 1px black solid;
+    padding: 10px;
+    margin: 2.5px 0;
+    font-size: 1em;
+    box-shadow: 0px 0px 4px 1px;
 
-  .header-container {
-    button {
-      background-color: $secondary-color;
-      border-radius: 5px;
-      border: 1px black solid;
-      padding: 10px;
-      margin: 2.5px 0;
-      font-size: 1em;
-      box-shadow: 0px 0px 4px 1px;
-
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }

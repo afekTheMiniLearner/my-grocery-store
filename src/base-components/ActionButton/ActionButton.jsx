@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ActionButton.scss';
 
-function ActionButton({ label, onClickHandler, classes }) {
+function ActionButton({ label, onClickHandler, classes, children }) {
   return (
     <button
       className={`action-button-container ${classes}`}
@@ -13,6 +13,7 @@ function ActionButton({ label, onClickHandler, classes }) {
       }}
     >
       {label}
+      {children}
     </button>
   );
 }

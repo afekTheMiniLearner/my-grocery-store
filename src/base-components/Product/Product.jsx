@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BsCartPlus, BsCartDash } from 'react-icons/bs';
 
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import ActionButton from '../ActionButton/ActionButton';
@@ -17,9 +18,17 @@ function Product({
       <h3>Product: {productName}</h3>
       <h4>Price: ${price}</h4>
       {!!selectedCount && (
-        <ActionButton label="Remove from cart" onClickHandler={onRemove} />
+        <ActionButton
+          label={`Remove (${selectedCount})`}
+          onClickHandler={onRemove}
+          classes="rectangle-button"
+        >
+          <BsCartDash />
+        </ActionButton>
       )}
-      <ActionButton label="Add to Cart" onClickHandler={onAdd} />
+      <ActionButton label="Buy" onClickHandler={onAdd} classes="rectangle-button">
+        <BsCartPlus />
+      </ActionButton>
     </ContentWrapper>
   );
 }

@@ -1,22 +1,35 @@
 @import '../../utils/variables';
 
 .action-button-container {
+  display: flex;
+  align-items: center;
   background-color: $primary-color;
-  border-radius: 5px;
   border: 2px black solid;
-  padding: 10px;
-  margin: 2.5px 0;
-  min-height: 30px;
-  min-width: 30px;
-
+  font-size: 1.2em;
   cursor: pointer;
-  &.delete-button {
-    background-color: rgba(255, 0, 0, 0.658);
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.rectangle-button {
+    justify-content: space-between;
+    min-height: 40px;
+    min-width: 100px;
+
+    padding: 10px;
+    margin: 2.5px 0;
+    border-radius: 5px;
+    gap: 5px;
   }
 
   &.circular-button {
     border-radius: 50% !important;
     height: 90px;
     width: 90px;
+  }
+
+  &.delete-button {
+    background-color: rgba(255, 0, 0, 0.658);
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 import { ProductsProxy } from '../../utils';
 import {
@@ -8,9 +9,12 @@ import {
   LabeledInput,
 } from '../../base-components';
 
-function ProductEditor({ id, productName, price }) {
+function ProductEditor({ id, productName, price, navigatePath }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);
   const [updatedPrice, setUpdatedPrice] = useState(price);
+
+  const navigate = useNavigate();
+  const shouldNavigate = !!navigatePath;
 
   const onProductNameChange = (event) => {
     if (event.target.value === '') return;
@@ -27,7 +31,6 @@ function ProductEditor({ id, productName, price }) {
     price: updatedPrice,
   };
 
-  console.log(productName, price);
   return (
     <ContentWrapper classes="product">
       <LabeledInput
@@ -44,12 +47,19 @@ function ProductEditor({ id, productName, price }) {
       />
       <ActionButton
         label="Delete product"
-        onClickHandler={() => ProductsProxy.delete(id)}
-        classes="delete-button"
+        onClickHandler={() => {
+          const isDeleted = ProductsProxy.delete(id);
+          if (shouldNavigate && isDeleted) navigate(navigatePath);
+        }}
+        classes="rectangle-button delete-button"
       />
       <ActionButton
         label="Update product"
-        onClickHandler={() => ProductsProxy.put(data, id)}
+        onClickHandler={() => {
+          const isUpdated = ProductsProxy.put(data, id);
+          if (shouldNavigate && isUpdated) navigate(navigatePath);
+        }}
+        classes="rectangle-button"
       />
     </ContentWrapper>
   );
@@ -59,12 +69,14 @@ ProductEditor.propTypes = {
   id: PropTypes.string,
   productName: PropTypes.string,
   price: PropTypes.number,
+  navigateUrl: PropTypes.string,
 };
 
 ProductEditor.defaultProps = {
   id: undefined,
   productName: 'product',
   price: 0,
+  navigateUrl: undefined,
 };
 
 export default ProductEditor;

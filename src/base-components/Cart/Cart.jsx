@@ -1,12 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { BsCart, BsCurrencyDollar } from 'react-icons/bs';
 
-import "./Cart.scss";
+import './Cart.scss';
 
 function Cart({ totalSelected, totalPrice }) {
   return (
     <div className="cart-container">
-      {`Cart(${totalSelected}) Price:${totalPrice}$`}
+      <div>
+        <BsCart /> {totalSelected}
+      </div>
+      <div>
+        <BsCurrencyDollar /> {totalPrice}
+      </div>
     </div>
   );
 }

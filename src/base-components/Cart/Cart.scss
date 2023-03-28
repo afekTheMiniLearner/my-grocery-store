@@ -1,6 +1,14 @@
-@import "../../utils/_variables.scss";
+@import '../../utils/_variables.scss';
 
 .cart-container {
   @include centered-flex;
+  flex-direction: column;
   font-size: 2em;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    gap: 13px;
+  }
 }

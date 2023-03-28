@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
 import { ProductsProxy } from '../../utils';
@@ -8,9 +10,12 @@ import {
   LabeledInput,
 } from '../../base-components';
 
-function ProductCreator() {
+function ProductCreator({ navigatePath }) {
   const [updatedProductName, setUpdatedProductName] = useState('');
   const [updatedPrice, setUpdatedPrice] = useState(0);
+
+  const navigate = useNavigate();
+  const shouldNavigate = !!navigatePath;
 
   const onProductNameChange = (event) => {
     if (event.target.value === '') return;
@@ -49,11 +54,22 @@ function ProductCreator() {
         label="Create product"
         onClickHandler={() => {
           if (!updatedProductName || !updatedPrice) return;
-          ProductsProxy.post(data.current);
+
+          const isDeleted = ProductsProxy.post(data.current);
+          if (shouldNavigate && isDeleted) navigate(navigatePath);
         }}
+        classes="rectangle-button"
       />
     </ContentWrapper>
   );
 }
+
+ProductCreator.propTypes = {
+  navigatePath: PropTypes.string,
+};
+
+ProductCreator.defaultProps = {
+  navigatePath: undefined,
+};
 
 export default ProductCreator;

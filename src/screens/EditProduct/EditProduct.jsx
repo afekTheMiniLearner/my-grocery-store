@@ -7,6 +7,7 @@ import { Header } from '../../base-components';
 import { ProductEditor } from '../../components';
 
 export default function EditProduct() {
+  // change it to fetch the product
   const products = useSelector((state) => getProductsSelector(state));
   const { id } = useParams();
   const { productName, price } = products.find((p) => p.id === id);
@@ -14,7 +15,12 @@ export default function EditProduct() {
   return (
     <div className="product-modify-container">
       <Header title="Edit product:" />
-      <ProductEditor id={id} productName={productName} price={price} />
+      <ProductEditor
+        id={id}
+        productName={productName}
+        price={price}
+        navigatePath={'/'}
+      />
     </div>
   );
 }
