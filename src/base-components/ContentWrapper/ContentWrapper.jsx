@@ -5,7 +5,12 @@ import './ContentWrapper.scss';
 
 function ContentWrapper({ children, onClick, classes }) {
   return (
-    <div className={`content-wrapper ${classes}`} onClick={onClick}>
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      className={`content-wrapper ${classes}`}
+      onClick={onClick}
+      onKeyDown={onClick}
+    >
       {children}
     </div>
   );

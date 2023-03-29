@@ -1,5 +1,5 @@
-import React from "react";
-import Router from "./screens";
+import React from 'react';
+import Router from './screens';
 
 function App() {
   return <Router />;

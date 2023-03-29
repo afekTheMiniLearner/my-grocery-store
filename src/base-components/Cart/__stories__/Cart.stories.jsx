@@ -61,7 +61,7 @@ AdjustSize.argTypes = {
     control: { type: "number", min: 50, max: 4000, step: 50 },
     defaultValue: 300,
   },
-  totalProductsSelected: { control: false },
+  totalSelected: { control: false },
   totalPrice: { control: false },
 };
 
@@ -69,8 +69,8 @@ const Template = (args) => <Cart {...args} />;
 
 export const Custom = Template.bind({});
 Custom.argTypes = {
-  totalProductsSelected: {
-    control: { type: "number", min: 0, max: 100, step: 1 },
+  totalSelected: {
+    control: { type: "number", min: 0, max: 100, step: 5 },
     defaultValue: 0,
   },
   totalPrice: {

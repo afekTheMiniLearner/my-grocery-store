@@ -1,16 +1,22 @@
 import React from 'react';
-import Title from '../Title';
+
+import LabeledInput from '../LabeledInput';
 
 export default {
-  title: 'base-components/Title',
-  component: Title,
+  title: 'base-components/LabeledInput',
+  component: LabeledInput,
+  parameters: {
+    controls: {
+      exclude: /^(inputState|onChangeHandler)$/gi,
+    },
+  },
   decorators: [
     (Story) => (
       <div
         style={{
           display: 'flex',
-          justifyContent: 'center',
           alignItems: 'center',
+          justifyContent: 'center',
           width: '95vw',
           height: '95vh',
         }}
@@ -21,16 +27,16 @@ export default {
   ],
 };
 
-export const Default = () => <Title />;
+export const Default = () => <LabeledInput />;
 Default.decorators = [
   (Story) => (
     <div
       style={{
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
-        width: '50%',
-        height: '40%',
+        justifyContent: 'center',
+        width: '1000px',
+        height: '700px',
       }}
     >
       <Story />
@@ -42,14 +48,14 @@ export const AdjustSize = (props) => (
   <div
     style={{
       display: 'flex',
-      justifyContent: 'center',
       alignItems: 'center',
+      justifyContent: 'center',
       height: `${props.height}px`,
       width: `${props.width}px`,
       border: '2px red solid',
     }}
   >
-    <Title />
+    <LabeledInput />
   </div>
 );
 AdjustSize.argTypes = {
@@ -59,25 +65,36 @@ AdjustSize.argTypes = {
   },
   width: {
     control: { type: 'number', min: 50, max: 4000, step: 50 },
-    defaultValue: 300,
+    defaultValue: 900,
   },
+  label: { control: false },
+  classes: { control: false },
+  type: { control: false },
 };
 
-const Template = (args) => <Title {...args} />;
+const Template = (args) => <LabeledInput {...args} />;
 
 export const Custom = Template.bind({});
 Custom.argTypes = {
-  title: { control: { type: 'text' }, defaultValue: 'Welcome to my site!' },
+  label: { control: { type: 'text' }, defaultValue: 'Enter input:' },
+  classes: {
+    control: { type: 'inline-radio' },
+    options: ['" "', 'price-input'],
+  },
+  type: {
+    control: { type: 'inline-radio' },
+    options: ['number', 'text'],
+  },
 };
 Custom.decorators = [
   (Story) => (
     <div
       style={{
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
-        width: '400px',
-        height: '350px',
+        justifyContent: 'center',
+        width: '1000px',
+        height: '700px',
       }}
     >
       <Story />

@@ -33,7 +33,7 @@ export default function EditProduct() {
         id={id}
         productName={productData.current.productName}
         price={productData.current.price}
-        navigatePath={'/'}
+        navigatePath="/"
       />
     </div>
   ) : (

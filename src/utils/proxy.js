@@ -126,7 +126,7 @@ export default class ProxyDB {
         }
         return res.json();
       })
-      .then((data) => {
+      .then(() => {
         console.log(`${method} Request done successfully`);
         response = true;
       })

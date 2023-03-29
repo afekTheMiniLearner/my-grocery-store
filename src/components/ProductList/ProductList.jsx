@@ -31,13 +31,16 @@ function ProductList() {
   const onRemove = (id) => {
     dispatch(removeFromCartAction({ id }));
   };
-  const initProducts = (products) => {
-    dispatch(initProductsAction({ products }));
+  const initProducts = (newProducts) => {
+    dispatch(initProductsAction({ products: newProducts }));
   };
 
   useEffect(() => {
     ProductsProxy.getAllData()
       .then((data) => {
+        // To make sure the data isn't null
+        if (!data) return;
+
         initProducts(data);
         setIsDataFetched(true);
       })
@@ -48,7 +51,7 @@ function ProductList() {
 
   return isDataFetched ? (
     <div className="product-list-container">
-      {products.map((productData) => {
+      {products?.map((productData) => {
         const { id, productName, price } = productData;
 
         return (
@@ -60,7 +63,7 @@ function ProductList() {
             onClick={() => navigate(`/product/${id}`)}
             onAdd={() => onAdd(id)}
             onRemove={() => onRemove(id)}
-          ></Product>
+          />
         );
       })}
     </div>

@@ -1,16 +1,15 @@
 import React from 'react';
-
-import Header from '../Header';
-import Cart from '../../Cart/Cart';
+import ProductEditorOffline from '../ProductEditorOffline';
 
 export default {
-  title: 'base-components/Header',
-  component: Header,
+  title: 'components/ProductEditor',
+  component: ProductEditorOffline,
   decorators: [
     (Story) => (
       <div
         style={{
           display: 'flex',
+          justifyContent: 'center',
           alignItems: 'center',
           width: '95vw',
           height: '95vh',
@@ -22,17 +21,16 @@ export default {
   ],
 };
 
-export const Default = () => (
-  <Header>
-    <Cart />
-  </Header>
-);
+export const Default = () => <ProductEditorOffline />;
 Default.decorators = [
   (Story) => (
     <div
       style={{
-        width: '100%',
-        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '350px',
+        height: '400px',
       }}
     >
       <Story />
@@ -43,14 +41,15 @@ Default.decorators = [
 export const AdjustSize = (props) => (
   <div
     style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       height: `${props.height}px`,
       width: `${props.width}px`,
       border: '2px red solid',
     }}
   >
-    <Header>
-      <Cart />
-    </Header>
+    <ProductEditorOffline />
   </div>
 );
 AdjustSize.argTypes = {
@@ -60,29 +59,8 @@ AdjustSize.argTypes = {
   },
   width: {
     control: { type: 'number', min: 50, max: 4000, step: 50 },
-    defaultValue: 900,
+    defaultValue: 350,
   },
+  productName: { control: false },
+  price: { control: false },
 };
-
-const Template = (args) => (
-  <Header {...args}>
-    <Cart />
-  </Header>
-);
-
-export const Custom = Template.bind({});
-Custom.argTypes = {
-  title: { control: { type: 'text' }, defaultValue: 'my-grocery-store' },
-};
-Custom.decorators = [
-  (Story) => (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      <Story />
-    </div>
-  ),
-];

@@ -7,12 +7,8 @@ function LabeledInput({ label, inputState, onChangeHandler, type, classes }) {
   return (
     <div className={`labeled-input-container ${classes}`}>
       <h4>{label} </h4>
-      <div className='input-container'>
-        <input
-          type={type}
-          onChange={onChangeHandler}
-          value={inputState}
-        ></input>
+      <div className="input-container">
+        <input type={type} onChange={onChangeHandler} value={inputState} />
       </div>
     </div>
   );

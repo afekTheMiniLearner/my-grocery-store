@@ -12,7 +12,7 @@ const productSlice = createSlice({
       state.productList = action.payload.products;
     },
     addToCart(state, action) {
-      const id = action.payload.id;
+      const { id } = action.payload;
 
       const { price } = state.productList.find((p) => p.id === id);
 
@@ -23,7 +23,7 @@ const productSlice = createSlice({
       );
     },
     removeFromCart(state, action) {
-      const id = action.payload.id;
+      const { id } = action.payload;
       const { price } = state.productList.find((p) => p.id === id);
 
       if (state.selectedProducts[id]) {

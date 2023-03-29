@@ -1,23 +1,23 @@
-import React from "react";
-import Product from "../Product";
+import React from 'react';
+import Product from '../Product';
 
 export default {
-  title: "base-components/Product",
+  title: 'base-components/Product',
   component: Product,
   parameters: {
     controls: {
-      exclude: /^(onAdd|onRemove|id)$/gi,
+      exclude: /^(onAdd|onRemove|onClick|id)$/gi,
     },
   },
   decorators: [
     (Story) => (
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "95vw",
-          height: "95vh",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '95vw',
+          height: '95vh',
         }}
       >
         <Story />
@@ -31,11 +31,11 @@ Default.decorators = [
   (Story) => (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "50%",
-        height: "40%",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '15%',
+        height: '20%',
       }}
     >
       <Story />
@@ -46,12 +46,12 @@ Default.decorators = [
 export const AdjustSize = (props) => (
   <div
     style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       height: `${props.height}px`,
       width: `${props.width}px`,
-      border: "2px red solid",
+      border: '2px red solid',
     }}
   >
     <Product />
@@ -59,11 +59,11 @@ export const AdjustSize = (props) => (
 );
 AdjustSize.argTypes = {
   height: {
-    control: { type: "number", min: 50, max: 3000, step: 50 },
+    control: { type: 'number', min: 50, max: 3000, step: 50 },
     defaultValue: 300,
   },
   width: {
-    control: { type: "number", min: 50, max: 4000, step: 50 },
+    control: { type: 'number', min: 50, max: 4000, step: 50 },
     defaultValue: 300,
   },
   selectedCount: { control: false },
@@ -75,13 +75,13 @@ const Template = (args) => <Product {...args} />;
 
 export const Custom = Template.bind({});
 Custom.argTypes = {
-  productName: { control: false },
+  productName: { control: { type: 'text' }, defaultValue: 'Water' },
   selectedCount: {
-    control: { type: "number", min: 0, max: 1000, step: 5 },
+    control: { type: 'number', min: 0, max: 1000, step: 5 },
     defaultValue: 10,
   },
   price: {
-    control: { type: "number", min: 0, max: 9999, step: 10 },
+    control: { type: 'number', min: 0, max: 9999, step: 10 },
     defaultValue: 5,
   },
 };
@@ -89,11 +89,11 @@ Custom.decorators = [
   (Story) => (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "400px",
-        height: "350px",
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '400px',
+        height: '350px',
       }}
     >
       <Story />

@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 
 import './ActionButton.scss';
 
-function ActionButton({ label, onClickHandler, classes, children }) {
+function ActionButton({ label, onClickHandler, classes, type, children }) {
   return (
     <button
       className={`action-button-container ${classes}`}
       onClick={(event) => {
         event.stopPropagation();
-        onClickHandler();
+        onClickHandler?.();
       }}
+      // eslint-disable-next-line react/button-has-type
+      type={type}
     >
       {label}
       {children}
@@ -22,12 +24,14 @@ ActionButton.propTypes = {
   label: PropTypes.string,
   onClickHandler: PropTypes.func,
   classes: PropTypes.string,
+  type: PropTypes.string,
 };
 
 ActionButton.defaultProps = {
   label: undefined,
   onClickHandler: undefined,
   classes: '',
+  type: 'button',
 };
 
 export default ActionButton;

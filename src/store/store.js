@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import productSlice from './slices/products.slice';
 
-export const storeConfig = () => {
+export default function storeConfig() {
   return configureStore(
     {
       reducer: {
@@ -13,4 +13,4 @@ export const storeConfig = () => {
     // Only for development uses, delete in production
     composeWithDevTools()
   );
-};
+}
