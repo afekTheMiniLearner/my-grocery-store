@@ -15,8 +15,8 @@ function Product({
 }) {
   return (
     <ContentWrapper onClick={onClick} classes="product custom-cursor-edit">
-      <h3>Product: {productName}</h3>
-      <h4>Price: ${price}</h4>
+      <p>Product: {productName}</p>
+      <p>Price: ${price}</p>
       {!!selectedCount && (
         <ActionButton
           label={`Remove (${selectedCount})`}
@@ -26,7 +26,11 @@ function Product({
           <BsCartDash />
         </ActionButton>
       )}
-      <ActionButton label="Buy" onClickHandler={onAdd} classes="rectangle-button">
+      <ActionButton
+        label="Buy"
+        onClickHandler={onAdd}
+        classes="rectangle-button"
+      >
         <BsCartPlus />
       </ActionButton>
     </ContentWrapper>
