@@ -1,6 +1,7 @@
 {
   "name": "my-grocery-store",
-  "version": "0.1.0",
+  "homepage": "https://afektheminilearner.github.io/my-grocery-store/",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
