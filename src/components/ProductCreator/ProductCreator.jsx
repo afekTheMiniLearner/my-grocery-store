@@ -38,13 +38,13 @@ function ProductCreator({ navigateCB }) {
     <ContentWrapper classes="product">
       <LabeledInput
         label="Enter product name:"
-        inputState={updatedProductName}
+        placeholder="Product's name"
         onChangeHandler={onProductNameChange}
         type="text"
       />
       <LabeledInput
         label="Enter price:"
-        inputState={updatedPrice}
+        placeholder="Product's price"
         onChangeHandler={onPriceChange}
         type="number"
         classes="price-input"

@@ -3,12 +3,22 @@ import PropTypes from 'prop-types';
 
 import './LabeledInput.scss';
 
-function LabeledInput({ label, inputState, onChangeHandler, type, classes }) {
+export default function LabeledInput({
+  label,
+  placeholder,
+  onChangeHandler,
+  type,
+  classes,
+}) {
   return (
     <div className={`labeled-input-container ${classes}`}>
       <h4>{label} </h4>
       <div className="input-container">
-        <input type={type} onChange={onChangeHandler} value={inputState} />
+        <input
+          type={type}
+          onChange={onChangeHandler}
+          placeholder={placeholder}
+        />
       </div>
     </div>
   );
@@ -16,7 +26,7 @@ function LabeledInput({ label, inputState, onChangeHandler, type, classes }) {
 
 LabeledInput.propTypes = {
   label: PropTypes.string,
-  inputState: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChangeHandler: PropTypes.func,
   type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   classes: PropTypes.string,
@@ -24,10 +34,8 @@ LabeledInput.propTypes = {
 
 LabeledInput.defaultProps = {
   label: undefined,
-  inputState: '',
+  placeholder: '',
   onChangeHandler: undefined,
   type: 'text',
   classes: '',
 };
-
-export default LabeledInput;

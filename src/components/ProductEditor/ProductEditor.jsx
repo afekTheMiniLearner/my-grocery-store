@@ -30,13 +30,13 @@ function ProductEditor({ id, productName, price, navigateCB }) {
   return (
     <ContentWrapper classes="product">
       <LabeledInput
-        inputState={updatedProductName}
+        placeholder={updatedProductName}
         onChangeHandler={onProductNameChange}
         label="Product:"
         type="text"
       />
       <LabeledInput
-        inputState={updatedPrice}
+        placeholder={updatedPrice}
         onChangeHandler={onPriceChange}
         label="Price :"
         type="number"

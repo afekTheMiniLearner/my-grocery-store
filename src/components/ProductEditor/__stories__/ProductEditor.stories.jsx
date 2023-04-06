@@ -1,9 +1,14 @@
 import React from 'react';
-import ProductEditorOffline from '../ProductEditorOffline';
+import ProductEditor from '../ProductEditor';
 
 export default {
   title: 'components/ProductEditor',
-  component: ProductEditorOffline,
+  component: ProductEditor,
+  parameters: {
+    controls: {
+      exclude: /^(id|navigateCB)$/gi,
+    },
+  },
   decorators: [
     (Story) => (
       <div
@@ -21,7 +26,7 @@ export default {
   ],
 };
 
-export const Default = () => <ProductEditorOffline />;
+export const Default = () => <ProductEditor />;
 Default.decorators = [
   (Story) => (
     <div
@@ -30,7 +35,7 @@ Default.decorators = [
         justifyContent: 'center',
         alignItems: 'center',
         width: '350px',
-        height: '400px',
+        height: '450px',
       }}
     >
       <Story />
@@ -49,7 +54,7 @@ export const AdjustSize = (props) => (
       border: '2px red solid',
     }}
   >
-    <ProductEditorOffline />
+    <ProductEditor />
   </div>
 );
 AdjustSize.argTypes = {
@@ -59,7 +64,7 @@ AdjustSize.argTypes = {
   },
   width: {
     control: { type: 'number', min: 50, max: 4000, step: 50 },
-    defaultValue: 350,
+    defaultValue: 450,
   },
   productName: { control: false },
   price: { control: false },

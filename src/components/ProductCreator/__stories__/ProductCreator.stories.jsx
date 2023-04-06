@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductCreatorOffline from '../ProductCreatorOffline';
+import ProductCreator from '../ProductCreator';
 
 export default {
   title: 'components/ProductCreator',
-  component: ProductCreatorOffline,
+  component: ProductCreator,
   decorators: [
     (Story) => (
       <div
@@ -21,7 +21,7 @@ export default {
   ],
 };
 
-export const Default = () => <ProductCreatorOffline />;
+export const Default = () => <ProductCreator />;
 Default.decorators = [
   (Story) => (
     <div
@@ -49,7 +49,7 @@ export const AdjustSize = (props) => (
       border: '2px red solid',
     }}
   >
-    <ProductCreatorOffline />
+    <ProductCreator />
   </div>
 );
 AdjustSize.argTypes = {
