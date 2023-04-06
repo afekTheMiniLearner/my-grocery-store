@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import { Header, Loading } from '../../base-components';
 import { ProductEditor } from '../../components';
@@ -8,6 +8,7 @@ import { ProductsProxy } from '../../utils';
 export default function EditProduct() {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const productData = useRef({
     productName: undefined,
@@ -33,7 +34,7 @@ export default function EditProduct() {
         id={id}
         productName={productData.current.productName}
         price={productData.current.price}
-        navigatePath="/"
+        navigateCB={() => navigate('/')}
       />
     </div>
   ) : (

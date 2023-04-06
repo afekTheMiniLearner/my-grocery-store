@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 
 import { ProductsProxy } from '../../utils';
 import {
@@ -9,12 +8,11 @@ import {
   LabeledInput,
 } from '../../base-components';
 
-function ProductEditor({ id, productName, price, navigatePath }) {
+function ProductEditor({ id, productName, price, navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);
   const [updatedPrice, setUpdatedPrice] = useState(price);
 
-  const navigate = useNavigate();
-  const shouldNavigate = !!navigatePath;
+  const shouldNavigate = !!navigateCB;
 
   const onProductNameChange = (event) => {
     setUpdatedProductName(event.target.value);
@@ -48,7 +46,7 @@ function ProductEditor({ id, productName, price, navigatePath }) {
         label="Delete product"
         onClickHandler={() => {
           const isDeleted = ProductsProxy.delete(id);
-          if (shouldNavigate && isDeleted) navigate(navigatePath);
+          if (shouldNavigate && isDeleted) navigateCB();
         }}
         classes="rectangle-button delete-button"
       />
@@ -56,7 +54,7 @@ function ProductEditor({ id, productName, price, navigatePath }) {
         label="Update product"
         onClickHandler={() => {
           const isUpdated = ProductsProxy.put(data, id);
-          if (shouldNavigate && isUpdated) navigate(navigatePath);
+          if (shouldNavigate && isUpdated) navigateCB();
         }}
         classes="rectangle-button"
       />
@@ -68,14 +66,14 @@ ProductEditor.propTypes = {
   id: PropTypes.string,
   productName: PropTypes.string,
   price: PropTypes.number,
-  navigatePath: PropTypes.string,
+  navigateCB: PropTypes.func,
 };
 
 ProductEditor.defaultProps = {
   id: undefined,
   productName: 'product',
   price: 0,
-  navigatePath: undefined,
+  navigateCB: undefined,
 };
 
 export default ProductEditor;

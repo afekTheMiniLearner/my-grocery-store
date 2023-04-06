@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 
 import { ProductsProxy } from '../../utils';
@@ -10,12 +9,11 @@ import {
   LabeledInput,
 } from '../../base-components';
 
-function ProductCreator({ navigatePath }) {
+function ProductCreator({ navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState('');
   const [updatedPrice, setUpdatedPrice] = useState(0);
 
-  const navigate = useNavigate();
-  const shouldNavigate = !!navigatePath;
+  const shouldNavigate = !!navigateCB;
 
   const onProductNameChange = (event) => {
     if (event.target.value === '') return;
@@ -57,7 +55,7 @@ function ProductCreator({ navigatePath }) {
           if (!updatedProductName || !updatedPrice) return;
 
           const isDeleted = ProductsProxy.post(data.current);
-          if (shouldNavigate && isDeleted) navigate(navigatePath);
+          if (shouldNavigate && isDeleted) navigateCB();
         }}
         classes="rectangle-button"
       />
@@ -66,11 +64,11 @@ function ProductCreator({ navigatePath }) {
 }
 
 ProductCreator.propTypes = {
-  navigatePath: PropTypes.string,
+  navigateCB: PropTypes.func,
 };
 
 ProductCreator.defaultProps = {
-  navigatePath: undefined,
+  navigateCB: undefined,
 };
 
 export default ProductCreator;
