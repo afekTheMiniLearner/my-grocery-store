@@ -14,6 +14,7 @@
 _`npm install`_
 
 **Running the project:**</br>
+_`npm run json-server`_
 _`npm run start`_
 
 ---
