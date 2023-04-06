@@ -26,7 +26,8 @@
     "build": "react-scripts build",
     "lint": "eslint --ext .jsx --ext .js .",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-jsdocs": "jsdoc src/utils/functions.js -d js-docs"
   },
   "browserslist": {
     "production": [
