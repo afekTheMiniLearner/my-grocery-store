@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Header } from '../../base-components';
-import { ProductCreator } from '../../components';
+import { Header } from '@base-components';
+import { ProductCreator } from '@components';
 
 export default function CreateProduct() {
   const navigate = useNavigate();

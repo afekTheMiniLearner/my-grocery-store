@@ -2,12 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuid } from 'uuid';
 
-import { ProductsProxy } from '../../utils';
-import {
-  ActionButton,
-  ContentWrapper,
-  LabeledInput,
-} from '../../base-components';
+import { ProductsProxy } from '@utils';
+import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
 
 function ProductCreator({ navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState('');

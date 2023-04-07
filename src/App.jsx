@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Router from './screens';
+import Router from '@screens';
 
 function App() {
   return <Router />;

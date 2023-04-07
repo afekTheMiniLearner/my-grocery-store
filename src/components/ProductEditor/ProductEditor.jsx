@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { ProductsProxy } from '../../utils';
-import {
-  ActionButton,
-  ContentWrapper,
-  LabeledInput,
-} from '../../base-components';
+import { ProductsProxy } from '@utils';
+import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
 
 function ProductEditor({ id, productName, price, navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);

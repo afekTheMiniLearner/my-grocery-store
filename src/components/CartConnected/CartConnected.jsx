@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { Cart } from '../../base-components';
+import { Cart } from '@base-components';
 import {
   getSelectedProductsSelector,
   getTotalPriceSelector,
-} from '../../store';
+} from '@store';
 
 function CartConnected() {
   const { selectedProducts, totalPrice } = useSelector((state) => {

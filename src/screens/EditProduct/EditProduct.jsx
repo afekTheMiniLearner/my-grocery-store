@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-import { Header, Loading } from '../../base-components';
-import { ProductEditor } from '../../components';
-import { ProductsProxy } from '../../utils';
+import { Header, Loading } from '@base-components';
+import { ProductEditor } from '@components';
+import { ProductsProxy } from '@utils';
 
 export default function EditProduct() {
   const [isDataFetched, setIsDataFetched] = useState(false);

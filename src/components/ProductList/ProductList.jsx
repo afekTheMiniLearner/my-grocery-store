@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import './ProductList.scss';
-import { Loading, Product } from '../../base-components';
+import { Loading, Product } from '@base-components';
 import {
   addToCartAction,
   getProductsSelector,
   getSelectedProductsSelector,
   initProductsAction,
   removeFromCartAction,
-} from '../../store';
-import { ProductsProxy } from '../../utils';
+} from '@store';
+import { ProductsProxy } from '@utils';
 
 function ProductList() {
   const dispatch = useDispatch();
