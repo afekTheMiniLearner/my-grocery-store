@@ -6,10 +6,6 @@
 
 ---
 
-**Live demo:** </br>[my-grocery-store](https://afektheminilearner.github.io/my-grocery-store/)
-
----
-
 **Installation:**</br>
 _`npm install`_
 
