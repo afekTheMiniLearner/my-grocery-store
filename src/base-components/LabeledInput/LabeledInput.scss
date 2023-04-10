@@ -1,5 +1,3 @@
-@import '@styles/variables';
-
 .labeled-input-container {
   display: flex;
   flex-direction: row;
@@ -19,8 +17,6 @@
   }
 
   &.price-input {
-
-
     .input-container {
       &::after {
         content: '$';
