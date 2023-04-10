@@ -8,7 +8,8 @@
       "@base-components": ["./src/base-components/*"],
       "@utils": ["./src/utils/*"],
       "@store": ["./src/store/*"],
-      "@screens": ["./src/screens/*"]
+      "@screens": ["./src/screens/*"],
+      "@styles": ["./src/styles/*"]
     }
   },
   "include": ["src/**/*"]
