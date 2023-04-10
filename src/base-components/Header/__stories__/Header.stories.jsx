@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from '../Header';
-import Cart from '../../Cart/Cart';
+import Cart from '@base-components/Cart/Cart';
 
 export default {
   title: 'base-components/Header',

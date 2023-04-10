@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ProductCreator from '../ProductCreator';
 
 export default {
