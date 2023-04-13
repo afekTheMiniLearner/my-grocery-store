@@ -26,6 +26,7 @@ function Product({
           <ActionButton
             label={`Remove (${selectedCount})`}
             onClickHandler={onRemove}
+            classes="delete-button"
           >
             <BsCartDash />
           </ActionButton>
