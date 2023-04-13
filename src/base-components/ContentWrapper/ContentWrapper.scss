@@ -15,12 +15,14 @@
     max-width: 250px;
     max-height: 200px;
     height: 200px;
+    opacity: 0.95;
 
     &:hover {
       box-shadow: 5px 5px 12px 2px rgba(black, 0.15);
       max-width: 250px;
       transform: scaleY(1.01);
       transform: scaleX(1.01);
+      opacity: 1;
     }
   }
 
