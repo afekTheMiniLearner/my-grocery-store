@@ -10,11 +10,11 @@
   max-height: 40px;
   min-width: 180px;
 
-  font-size: 1.2em;
   background-color: $secondary-color;
-  border: unset;
-  border-radius: 5px;
-  box-shadow: 5px 5px 10px 1px rgba(black, 0.15);
+  font-size: 1.2em !important;
+  border: unset !important;
+  border-radius: 5px !important;
+  box-shadow: 5px 5px 10px 1px rgba(black, 0.15) !important;
   cursor: pointer;
 
   &:hover {
@@ -24,7 +24,7 @@
     transform: scaleX(1.03);
   }
 
-  &.delete-button {
+  &.warning {
     background-color: rgba(255, 0, 0, 0.55);
   }
 }

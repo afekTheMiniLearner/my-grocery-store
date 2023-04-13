@@ -80,7 +80,7 @@ Custom.argTypes = {
     control: {
       type: 'inline-radio',
     },
-    options: ['no-class', 'delete-button'],
+    options: ['no-class', 'warning'],
   },
 };
 Custom.decorators = [

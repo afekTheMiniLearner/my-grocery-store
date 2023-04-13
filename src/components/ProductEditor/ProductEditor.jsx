@@ -44,7 +44,7 @@ function ProductEditor({ id, productName, price, navigateCB }) {
           const isDeleted = ProductsProxy.delete(id);
           if (shouldNavigate && isDeleted) navigateCB();
         }}
-        classes="rectangle-button delete-button"
+        classes="rectangle-button warning"
       />
       <ActionButton
         label="Update product"

@@ -14,7 +14,7 @@ export default function StoreHomePage() {
         <ActionButton
           label="Create product"
           onClickHandler={() => navigate('/product/new')}
-          classes="circular-button"
+          style={{ justifyContent: 'center' }}
         />
         <CartConnected />
       </Header>
