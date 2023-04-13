@@ -80,12 +80,7 @@ Custom.argTypes = {
     control: {
       type: 'inline-radio',
     },
-    options: [
-      'circular-button',
-      'circular-button delete-button',
-      'rectangle-button',
-      'rectangle-button delete-button',
-    ],
+    options: ['no-class', 'delete-button'],
   },
 };
 Custom.decorators = [
