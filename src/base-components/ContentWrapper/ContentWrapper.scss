@@ -11,5 +11,6 @@
   background-color: $secondary-color;
   border-radius: 10px;
   box-shadow: 5px 5px 10px -1px rgba(black, 0.15);
-  cursor: url('../../assets/images/edit-cursor.png'), alias;
+  cursor: pointer;
+  // cursor: url('../../assets/images/edit-cursor.png'), alias;
 }
