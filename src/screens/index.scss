@@ -1,12 +1,8 @@
-.product-modify-container {
+.product-modifier-container {
   display: flex;
   flex-direction: column;
+  
   height: 100%;
   width: 100%;
   gap: 50px;
-
-  .product {
-    justify-self: center;
-    align-self: center;
-  }
 }

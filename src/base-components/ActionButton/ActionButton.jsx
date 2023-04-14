@@ -33,7 +33,8 @@ ActionButton.propTypes = {
   onClickHandler: PropTypes.func,
   classes: PropTypes.string,
   type: PropTypes.string,
-  style: PropTypes.shape,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
 };
 
 ActionButton.defaultProps = {

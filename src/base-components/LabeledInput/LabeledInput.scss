@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+  margin-right: auto;
 
   input {
     border-radius: 5px;
@@ -12,15 +13,19 @@
   }
 
   h4 {
-    width: 100%;
     word-wrap: break-word;
   }
 
   &.price-input {
+    position: relative;
     .input-container {
       &::after {
         content: '$';
-        font-size: 2em;
+        color: green;
+        position: absolute;
+        right: 0;
+        font-size: 1.6em;
+        margin-right: 35px;
       }
     }
   }
@@ -29,5 +34,6 @@
 .input-container {
   display: flex;
   align-items: center;
+  min-width: 150px;
   gap: 10px;
 }

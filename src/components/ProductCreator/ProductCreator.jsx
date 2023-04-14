@@ -31,7 +31,7 @@ function ProductCreator({ navigateCB }) {
   }, [updatedProductName, updatedPrice]);
 
   return (
-    <ContentWrapper classes="product">
+    <ContentWrapper classes="product-modifier">
       <LabeledInput
         label="Enter product name:"
         placeholder="Product's name"

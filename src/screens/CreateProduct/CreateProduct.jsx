@@ -7,7 +7,7 @@ import { ProductCreator } from '@components';
 export default function CreateProduct() {
   const navigate = useNavigate();
   return (
-    <div className="product-modify-container">
+    <div className="product-modifier-container">
       <Header title="Create product:" />
       <ProductCreator navigateCB={() => navigate('/')} />
     </div>

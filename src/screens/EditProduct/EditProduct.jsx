@@ -28,7 +28,7 @@ export default function EditProduct() {
   }, []);
 
   return isDataFetched ? (
-    <div className="product-modify-container">
+    <div className="product-modifier-container">
       <Header title="Edit product:" />
       <ProductEditor
         id={id}
