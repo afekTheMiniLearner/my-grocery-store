@@ -1,9 +1,9 @@
 {
   "ProductsData": [
     {
-      "id": "81ff8102-d0dc-4ce1-b944-3a0b4c787c1b",
       "productName": "Beef tallow",
-      "price": 100
+      "price": "90",
+      "id": "81ff8102-d0dc-4ce1-b944-3a0b4c787c1b"
     },
     {
       "id": "a707701a-3570-482a-8ec3-bb1fa888bcb7",
@@ -22,7 +22,7 @@
     },
     {
       "productName": "Bananas",
-      "price": "3",
+      "price": "6",
       "id": "8b7a6e33-125e-4300-8c06-625b33ea35ca"
     },
     {
@@ -54,11 +54,6 @@
       "productName": "Lemon",
       "price": "7",
       "id": "465641ac-a59d-4000-84ee-e33cdc8222b7"
-    },
-    {
-      "productName": "Aromat Spice",
-      "price": 16,
-      "id": "7d9af14e-be70-486a-9d0f-6984bd6cf148"
     },
     {
       "productName": "Brown bread",
@@ -129,6 +124,16 @@
       "id": "a3b8222c-d56b-4060-92cc-7fe577c8773b",
       "productName": "grape",
       "price": "4"
+    },
+    {
+      "id": "5c87ba93-e88b-42f2-84b7-cc7db867d92f",
+      "productName": "Coca-cola-zero-sugar",
+      "price": "5"
+    },
+    {
+      "id": "8e6eecf9-7ce6-48d7-b321-831ee4862c55",
+      "productName": "Rib-eye steak",
+      "price": "15"
     }
   ]
 }
