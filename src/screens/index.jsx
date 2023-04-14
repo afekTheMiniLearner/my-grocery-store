@@ -9,7 +9,6 @@ import {
 import HomePage from './HomePage/HomePage';
 import ProductEditorPage from './ProductEditorPage/ProductEditorPage';
 import ProductCreatorPage from './ProductCreatorPage/ProductCreatorPage';
-import NotFound from './NotFound/NotFound';
 import './index.scss';
 
 export default function Router() {
@@ -19,8 +18,7 @@ export default function Router() {
         <Route path="/" element={<HomePage />} />
         <Route path="/product/new" element={<ProductCreatorPage />} />
         <Route path="/product/:id" element={<ProductEditorPage />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="*" element={<Navigate to="/404" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Switch>
     </BrowserRouter>
   );
