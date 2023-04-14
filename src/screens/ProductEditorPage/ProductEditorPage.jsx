@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { Header, Loading } from '@base-components';
-import { ProductEditor } from '@components';
+import { EditProduct } from '@components';
 import { ProductsProxy } from '@utils';
 
-export default function EditProduct() {
+export default function ProductEditorPage() {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ export default function EditProduct() {
   return isDataFetched ? (
     <div className="product-modifier-container">
       <Header title="Edit product:" />
-      <ProductEditor
+      <EditProduct
         id={id}
         productName={productData.current.productName}
         price={+productData.current.price}

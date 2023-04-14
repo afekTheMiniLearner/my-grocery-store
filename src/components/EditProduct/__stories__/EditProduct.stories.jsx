@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProductEditor from '../ProductEditor';
+import EditProduct from '../EditProduct';
 
 export default {
-  title: 'components/ProductEditor',
-  component: ProductEditor,
+  title: 'components/EditProduct',
+  component: EditProduct,
   parameters: {
     controls: {
       exclude: /^(id|navigateCB)$/gi,
@@ -27,7 +27,7 @@ export default {
   ],
 };
 
-export const Default = () => <ProductEditor />;
+export const Default = () => <EditProduct />;
 Default.decorators = [
   (Story) => (
     <div
@@ -55,7 +55,7 @@ export const AdjustSize = (props) => (
       border: '2px red solid',
     }}
   >
-    <ProductEditor />
+    <EditProduct />
   </div>
 );
 AdjustSize.argTypes = {

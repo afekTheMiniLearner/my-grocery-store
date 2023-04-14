@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ProductCreator from '../ProductCreator';
+import CreateProduct from '../CreateProduct';
 
 export default {
-  title: 'components/ProductCreator',
-  component: ProductCreator,
+  title: 'components/CreateProduct',
+  component: CreateProduct,
   decorators: [
     (Story) => (
       <div
@@ -22,7 +22,7 @@ export default {
   ],
 };
 
-export const Default = () => <ProductCreator />;
+export const Default = () => <CreateProduct />;
 Default.decorators = [
   (Story) => (
     <div
@@ -50,7 +50,7 @@ export const AdjustSize = (props) => (
       border: '2px red solid',
     }}
   >
-    <ProductCreator />
+    <CreateProduct />
   </div>
 );
 AdjustSize.argTypes = {

@@ -2,14 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Header } from '@base-components';
-import { ProductCreator } from '@components';
+import { CreateProduct } from '@components';
 
-export default function CreateProduct() {
+export default function ProductCreatorPage() {
   const navigate = useNavigate();
   return (
     <div className="product-modifier-container">
       <Header title="Create product:" />
-      <ProductCreator navigateCB={() => navigate('/')} />
+      <CreateProduct navigateCB={() => navigate('/')} />
     </div>
   );
 }
