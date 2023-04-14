@@ -5,7 +5,7 @@ import { ProductsProxy } from '@utils';
 import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
 
 function EditProduct({ id, productName, price, navigateCB }) {
-  const [updatedProductName, setUpdatedProductName] = useState(productName);
+  const [updatedProductName, setUpdatedProductName] = useState(undefined);
   const [updatedPrice, setUpdatedPrice] = useState(price);
   const shouldNavigate = !!navigateCB;
 
