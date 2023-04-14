@@ -9,7 +9,7 @@ export default {
   component: ActionButton,
   parameters: {
     controls: {
-      exclude: /^(onClick.*|type)$/gi,
+      exclude: /^(onClick.*|type|style)$/gi,
     },
   },
   decorators: [

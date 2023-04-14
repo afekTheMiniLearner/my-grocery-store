@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ProductsProxy } from '@utils';
 import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
 
-function ProductEditor({ id, productName, price, navigateCB }) {
+function ProductModifier({ id, productName, price, navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);
   const [updatedPrice, setUpdatedPrice] = useState(price);
 
@@ -57,18 +57,18 @@ function ProductEditor({ id, productName, price, navigateCB }) {
   );
 }
 
-ProductEditor.propTypes = {
+ProductModifier.propTypes = {
   id: PropTypes.string,
   productName: PropTypes.string,
   price: PropTypes.number,
   navigateCB: PropTypes.func,
 };
 
-ProductEditor.defaultProps = {
+ProductModifier.defaultProps = {
   id: undefined,
   productName: 'product',
   price: 0,
   navigateCB: undefined,
 };
 
-export default ProductEditor;
+export default ProductModifier;

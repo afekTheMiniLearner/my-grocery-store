@@ -15,7 +15,7 @@ function Product({
   onRemove,
 }) {
   return (
-    <ContentWrapper onClick={onClick} classes="product custom-cursor-edit">
+    <ContentWrapper onClick={onClick} classes="product">
       <section>Product: {productName}</section>
       <section>price: ${price}</section>
       <div className="product-buttons-container">
