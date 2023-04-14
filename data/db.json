@@ -46,9 +46,9 @@
       "price": 98
     },
     {
-      "id": "b954bbb1-214b-4725-a807-7742128d70d7",
       "productName": "Lettuce - Boston Bib",
-      "price": 79
+      "price": 5,
+      "id": "b954bbb1-214b-4725-a807-7742128d70d7"
     },
     {
       "productName": "Lemon",

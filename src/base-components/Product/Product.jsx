@@ -16,8 +16,8 @@ function Product({
 }) {
   return (
     <ContentWrapper onClick={onClick} classes="product">
-      <section>Product: {productName}</section>
-      <section>price: ${price}</section>
+      <section>{productName}</section>
+      <section>${price}</section>
       <div className="product-buttons-container">
         <ActionButton label="Buy" onClickHandler={onAdd}>
           <BsCartPlus />
