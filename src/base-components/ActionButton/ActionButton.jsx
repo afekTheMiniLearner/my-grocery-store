@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ActionButton.scss';
 
-function ActionButton({
+export default function ActionButton({
   label,
   onClickHandler,
   classes,
@@ -44,5 +44,3 @@ ActionButton.defaultProps = {
   type: 'button',
   style: {},
 };
-
-export default ActionButton;

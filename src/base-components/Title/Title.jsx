@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./Title.scss";
+import './Title.scss';
 
-function Title({ title }) {
+export default function Title({ title }) {
   return <h2 className="title">{title} </h2>;
 }
 
@@ -12,7 +12,5 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-  title: "untitled",
+  title: 'untitled',
 };
-
-export default Title;

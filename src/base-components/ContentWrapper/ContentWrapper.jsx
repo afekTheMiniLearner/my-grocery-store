@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './ContentWrapper.scss';
 
-function ContentWrapper({ children, onClick, classes }) {
+export default function ContentWrapper({ children, onClick, classes }) {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
@@ -25,5 +25,3 @@ ContentWrapper.defaultProps = {
   onClick: undefined,
   classes: '',
 };
-
-export default ContentWrapper;

@@ -13,7 +13,7 @@ import {
 } from '@store';
 import { ProductsProxy } from '@utils';
 
-function ProductList() {
+export default function ProductList() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isDataFetched, setIsDataFetched] = useState(false);
@@ -71,5 +71,3 @@ function ProductList() {
     <Loading />
   );
 }
-
-export default ProductList;

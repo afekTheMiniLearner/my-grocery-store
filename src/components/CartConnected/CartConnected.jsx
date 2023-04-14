@@ -2,12 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { Cart } from '@base-components';
-import {
-  getSelectedProductsSelector,
-  getTotalPriceSelector,
-} from '@store';
+import { getSelectedProductsSelector, getTotalPriceSelector } from '@store';
 
-function CartConnected() {
+export default function CartConnected() {
   const { selectedProducts, totalPrice } = useSelector((state) => {
     return {
       selectedProducts: getSelectedProductsSelector(state),
@@ -22,5 +19,3 @@ function CartConnected() {
 
   return <Cart totalPrice={totalPrice} totalSelected={totalSelected} />;
 }
-
-export default CartConnected;

@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { ProductsProxy } from '@utils';
 import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
 
-function CreateProduct({ navigateCB }) {
+export default function CreateProduct({ navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState('');
   const [updatedPrice, setUpdatedPrice] = useState(0);
 
@@ -66,5 +66,3 @@ CreateProduct.propTypes = {
 CreateProduct.defaultProps = {
   navigateCB: undefined,
 };
-
-export default CreateProduct;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './Header.scss';
 import Title from '../Title/Title';
 
-function Header({ title, children }) {
+export default function Header({ title, children }) {
   return (
     <div className="header-container">
       <Title title={title} />
@@ -20,5 +20,3 @@ Header.propTypes = {
 Header.defaultProps = {
   title: 'untitled',
 };
-
-export default Header;

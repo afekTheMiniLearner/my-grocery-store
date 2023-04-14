@@ -2,8 +2,6 @@ import React from 'react';
 
 import Router from '@screens';
 
-function App() {
+export default function App() {
   return <Router />;
 }
-
-export default App;

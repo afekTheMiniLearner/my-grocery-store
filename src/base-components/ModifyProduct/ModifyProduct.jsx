@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { ProductsProxy } from '@utils';
-import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
+import { ContentWrapper, LabeledInput } from '@base-components';
 
-export default function EditProduct({ id, productName, price, navigateCB }) {
+export default function ModifyProduct({ productName, price, children }) {
   const [updatedProductName, setUpdatedProductName] = useState(undefined);
   const [updatedPrice, setUpdatedPrice] = useState(price);
-  const shouldNavigate = !!navigateCB;
 
   const onProductNameChange = (event) => {
     setUpdatedProductName(event.target.value);
@@ -15,11 +13,6 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
   const onPriceChange = (event) => {
     const p = event.target.value;
     setUpdatedPrice(p < 0 ? 0 : p);
-  };
-
-  const data = {
-    productName: updatedProductName || productName,
-    price: updatedPrice || price,
   };
 
   return (
@@ -39,7 +32,32 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
         type="number"
         classes="price"
       />
-      <ActionButton
+      {children}
+    </ContentWrapper>
+  );
+}
+
+ModifyProduct.propTypes = {
+  productName: PropTypes.string,
+  price: PropTypes.number,
+};
+
+ModifyProduct.defaultProps = {
+  productName: 'product',
+  price: 0,
+};
+
+/** import { ProductsProxy } from '@utils';
+ * 
+ *   const shouldNavigate = !!navigateCB;
+
+ * 
+ * 
+ *   const data = {
+    productName: updatedProductName || productName,
+    price: updatedPrice || price,
+  };
+ *       <ActionButton
         label="Delete product"
         onClickHandler={() => {
           const isDeleted = ProductsProxy.delete(id);
@@ -54,20 +72,4 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
           if (shouldNavigate && isUpdated) navigateCB();
         }}
       />
-    </ContentWrapper>
-  );
-}
-
-EditProduct.propTypes = {
-  id: PropTypes.string,
-  productName: PropTypes.string,
-  price: PropTypes.number,
-  navigateCB: PropTypes.func,
-};
-
-EditProduct.defaultProps = {
-  id: undefined,
-  productName: 'product',
-  price: 0,
-  navigateCB: undefined,
-};
+ */

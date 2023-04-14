@@ -4,7 +4,7 @@ import { BsCart, BsCurrencyDollar } from 'react-icons/bs';
 
 import './Cart.scss';
 
-function Cart({ totalSelected, totalPrice }) {
+export default function Cart({ totalSelected, totalPrice }) {
   return (
     <div className="cart-container">
       <div>
@@ -26,5 +26,3 @@ Cart.defaultProps = {
   totalSelected: 0,
   totalPrice: 0,
 };
-
-export default Cart;

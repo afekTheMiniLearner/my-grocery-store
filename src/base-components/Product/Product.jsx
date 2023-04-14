@@ -6,7 +6,7 @@ import './Product.scss';
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import ActionButton from '../ActionButton/ActionButton';
 
-function Product({
+export default function Product({
   productName,
   price,
   selectedCount,
@@ -53,5 +53,3 @@ Product.defaultProps = {
   onAdd: undefined,
   onRemove: undefined,
 };
-
-export default Product;
