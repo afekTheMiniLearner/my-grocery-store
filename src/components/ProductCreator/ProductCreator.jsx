@@ -43,7 +43,7 @@ function ProductCreator({ navigateCB }) {
         placeholder="Product's price"
         onChangeHandler={onPriceChange}
         type="number"
-        classes="price-input"
+        classes="price"
       />
       <ActionButton
         label="Create product"

@@ -21,14 +21,14 @@
       "price": 66
     },
     {
-      "id": "8b7a6e33-125e-4300-8c06-625b33ea35ca",
       "productName": "Bananas",
-      "price": 6
+      "price": "3",
+      "id": "8b7a6e33-125e-4300-8c06-625b33ea35ca"
     },
     {
-      "id": "8e82c2a1-5f77-4735-a658-3879b9d95ecd",
       "productName": "Calypso - Strawberry Lemonade",
-      "price": 50
+      "price": "6",
+      "id": "8e82c2a1-5f77-4735-a658-3879b9d95ecd"
     },
     {
       "id": "fcede1f0-a116-4900-bf9e-7823164d0758",

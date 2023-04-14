@@ -79,7 +79,7 @@ Custom.argTypes = {
   label: { control: { type: 'text' }, defaultValue: 'Enter input:' },
   classes: {
     control: { type: 'inline-radio' },
-    options: ['" "', 'price-input'],
+    options: ['" "', 'price'],
   },
   type: {
     control: { type: 'inline-radio' },

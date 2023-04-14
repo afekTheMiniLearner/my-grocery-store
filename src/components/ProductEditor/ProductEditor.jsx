@@ -7,7 +7,6 @@ import { ActionButton, ContentWrapper, LabeledInput } from '@base-components';
 function ProductEditor({ id, productName, price, navigateCB }) {
   const [updatedProductName, setUpdatedProductName] = useState(productName);
   const [updatedPrice, setUpdatedPrice] = useState(price);
-
   const shouldNavigate = !!navigateCB;
 
   const onProductNameChange = (event) => {
@@ -15,7 +14,7 @@ function ProductEditor({ id, productName, price, navigateCB }) {
   };
   const onPriceChange = (event) => {
     const p = event.target.value;
-    setUpdatedPrice(parseInt(p < 0 ? 0 : p));
+    setUpdatedPrice(p < 0 ? 0 : p);
   };
 
   const data = {
@@ -26,17 +25,19 @@ function ProductEditor({ id, productName, price, navigateCB }) {
   return (
     <ContentWrapper classes="product-modifier">
       <LabeledInput
+        label="Product:"
+        value={updatedProductName}
         placeholder={productName}
         onChangeHandler={onProductNameChange}
-        label="Product:"
         type="text"
       />
       <LabeledInput
         placeholder={price}
+        value={updatedPrice}
         onChangeHandler={onPriceChange}
         label="Price :"
         type="number"
-        classes="price-input"
+        classes="price"
       />
       <ActionButton
         label="Delete product"

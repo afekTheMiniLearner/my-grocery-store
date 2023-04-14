@@ -8,7 +8,7 @@
 
   input {
     border-radius: 5px;
-    border: 1px rgba(black,0.4) solid;
+    border: 1px rgba(black, 0.4) solid;
     padding: 10px;
   }
 
@@ -16,7 +16,7 @@
     word-wrap: break-word;
   }
 
-  &.price-input {
+  &.price {
     position: relative;
     .input-container {
       &::after {
