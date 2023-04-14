@@ -10,13 +10,15 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
       id={id}
       productName={productName}
       price={price}
-      navigateCB={navigateCB}
       modificationType="put"
+      executeButtonLabel="Update product"
+      navigateCB={navigateCB}
     >
       <ActionButton
         label="Delete product"
         onClickHandler={() => ProductsProxy.delete(id) && navigateCB?.()}
         classes="warning"
+        style={{ justifyContent: 'center' }}
       />
     </ModifyProduct>
   );

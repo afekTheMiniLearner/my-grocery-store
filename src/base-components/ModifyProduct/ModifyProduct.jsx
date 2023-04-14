@@ -13,6 +13,7 @@ export default function ModifyProduct({
   productName,
   price,
   modificationType,
+  executeButtonLabel,
   navigateCB,
   children,
 }) {
@@ -71,8 +72,10 @@ export default function ModifyProduct({
         classes="price"
       />
       <ActionButton
-        label={modificationType || 'Modify'}
+        label={executeButtonLabel}
         onClickHandler={onClickHandler}
+        classes={modificationType === 'delete' ? 'warning' : ''}
+        style={{ justifyContent: 'center' }}
       />
       {children}
     </ContentWrapper>
@@ -83,6 +86,7 @@ ModifyProduct.propTypes = {
   id: PropTypes.string,
   productName: PropTypes.string,
   modificationType: PropTypes.oneOf(['put', 'post', 'delete']),
+  executeButtonLabel: PropTypes.string,
   price: PropTypes.number,
   navigateCB: PropTypes.func,
 };
@@ -91,6 +95,7 @@ ModifyProduct.defaultProps = {
   id: undefined,
   productName: 'Product',
   modificationType: undefined,
+  executeButtonLabel: undefined,
   price: 0,
   navigateCB: undefined,
 };
