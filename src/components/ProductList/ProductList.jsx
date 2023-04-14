@@ -38,7 +38,6 @@ export default function ProductList() {
   useEffect(() => {
     ProductsProxy.getAllData()
       .then((data) => {
-        // To make sure the data isn't null
         if (!data) return;
 
         initProducts(data);

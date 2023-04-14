@@ -19,7 +19,7 @@ const productSlice = createSlice({
       state.selectedProducts[id] ||= 0;
       state.selectedProducts[id]++;
       state.totalPrice = parseFloat(
-        Number(state.totalPrice + price).toFixed(2)
+        Number(state.totalPrice + +price).toFixed(2)
       );
     },
     removeFromCart(state, action) {
