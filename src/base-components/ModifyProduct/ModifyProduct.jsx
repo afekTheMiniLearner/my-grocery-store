@@ -50,6 +50,7 @@ export default function ModifyProduct({
         label={executeButtonLabel}
         onClickHandler={() => onExecute(data)}
         style={{ justifyContent: 'center' }}
+        classes="modifier"
       />
       {children}
     </ContentWrapper>

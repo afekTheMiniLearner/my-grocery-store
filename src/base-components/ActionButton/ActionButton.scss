@@ -17,6 +17,12 @@
   box-shadow: 5px 5px 10px 1px rgba(black, 0.15) !important;
   cursor: pointer;
 
+  &.modifier {
+    min-height: 55px;
+    max-height: 55px;
+    min-width: 230px;
+  }
+
   &:hover {
     box-shadow: 5px 5px 10px 2px rgba(black, 0.2);
     opacity: 0.8;

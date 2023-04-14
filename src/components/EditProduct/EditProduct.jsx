@@ -22,7 +22,7 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
       <ActionButton
         label="Delete product"
         onClickHandler={() => ProductsProxy.delete(id) && navigateCB?.()}
-        classes="warning"
+        classes="modifier warning"
         style={{ justifyContent: 'center' }}
       />
     </ModifyProduct>
