@@ -5,6 +5,11 @@ import { ProductsProxy } from '@utils';
 import { ActionButton, ModifyProduct } from '@base-components';
 
 export default function EditProduct({ id, productName, price, navigateCB }) {
+  const onExecuteHandler = (data) => {
+    const isUpdated = ProductsProxy?.put(data, id);
+    if (isUpdated) navigateCB?.();
+  };
+
   return (
     <ModifyProduct
       id={id}
@@ -12,7 +17,7 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
       price={price}
       modificationType="put"
       executeButtonLabel="Update product"
-      navigateCB={navigateCB}
+      onExecute={onExecuteHandler}
     >
       <ActionButton
         label="Delete product"

@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { v4 as uuid } from 'uuid';
 
 import './ModifyProduct.scss';
-import { ProductsProxy } from '@utils';
 import LabeledInput from '../LabeledInput/LabeledInput';
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import ActionButton from '../ActionButton/ActionButton';
 
 export default function ModifyProduct({
-  id,
   productName,
   price,
-  modificationType,
   executeButtonLabel,
-  navigateCB,
+  onExecute,
   children,
 }) {
   const [updatedProductName, setUpdatedProductName] = useState(undefined);
@@ -31,27 +27,6 @@ export default function ModifyProduct({
   const data = {
     productName: updatedProductName || productName,
     price: updatedPrice,
-  };
-
-  const onClickHandler = () => {
-    // eslint-disable-next-line default-case
-    switch (modificationType) {
-      case 'put': {
-        const isUpdated = ProductsProxy?.put(data, id);
-        if (isUpdated) navigateCB?.();
-        break;
-      }
-      case 'post': {
-        const isCreated = ProductsProxy?.post({ id: uuid(), ...data });
-        if (isCreated) navigateCB?.();
-        break;
-      }
-      case 'delete': {
-        const isDeleted = ProductsProxy?.delete(id);
-        if (isDeleted) navigateCB?.();
-        break;
-      }
-    }
   };
 
   return (
@@ -73,8 +48,7 @@ export default function ModifyProduct({
       />
       <ActionButton
         label={executeButtonLabel}
-        onClickHandler={onClickHandler}
-        classes={modificationType === 'delete' ? 'warning' : ''}
+        onClickHandler={() => onExecute(data)}
         style={{ justifyContent: 'center' }}
       />
       {children}
@@ -83,19 +57,15 @@ export default function ModifyProduct({
 }
 
 ModifyProduct.propTypes = {
-  id: PropTypes.string,
   productName: PropTypes.string,
-  modificationType: PropTypes.oneOf(['put', 'post', 'delete']),
   executeButtonLabel: PropTypes.string,
+  onExecute: PropTypes.func,
   price: PropTypes.number,
-  navigateCB: PropTypes.func,
 };
 
 ModifyProduct.defaultProps = {
-  id: undefined,
-  productName: 'Product',
-  modificationType: undefined,
+  productName: 'Product name',
   executeButtonLabel: undefined,
+  onExecute: undefined,
   price: 0,
-  navigateCB: undefined,
 };

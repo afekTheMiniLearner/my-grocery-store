@@ -27,7 +27,7 @@
     },
     {
       "productName": "Calypso - Strawberry Lemonade",
-      "price": "6",
+      "price": "4",
       "id": "8e82c2a1-5f77-4735-a658-3879b9d95ecd"
     },
     {
@@ -47,12 +47,12 @@
     },
     {
       "productName": "Lettuce - Boston Bib",
-      "price": 5,
+      "price": "1",
       "id": "b954bbb1-214b-4725-a807-7742128d70d7"
     },
     {
       "productName": "Lemon",
-      "price": 88,
+      "price": "7",
       "id": "465641ac-a59d-4000-84ee-e33cdc8222b7"
     },
     {
@@ -121,9 +121,14 @@
       "price": 5
     },
     {
-      "id": "6585c06f-f334-49ce-9665-777939f65757",
-      "productName": "protein powder",
-      "price": "5"
+      "productName": "Deodorant",
+      "price": "3",
+      "id": "6585c06f-f334-49ce-9665-777939f65757"
+    },
+    {
+      "id": "a3b8222c-d56b-4060-92cc-7fe577c8773b",
+      "productName": "grape",
+      "price": "4"
     }
   ]
 }
