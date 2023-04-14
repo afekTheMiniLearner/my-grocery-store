@@ -10,7 +10,7 @@
   max-height: 40px;
   min-width: 180px;
 
-  background-color: $secondary-color;
+  background-color: rgba($add-color, 0.5);
   font-size: 1.2em !important;
   border: unset !important;
   border-radius: 5px !important;
@@ -25,6 +25,6 @@
   }
 
   &.warning {
-    background-color: rgba(255, 0, 0, 0.55);
+    background-color: $warning-color;
   }
 }

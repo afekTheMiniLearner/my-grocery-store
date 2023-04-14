@@ -12,6 +12,7 @@ import {
   removeFromCartAction,
 } from '@store';
 import { ProductsProxy } from '@utils';
+import CreateProductButton from '../CreateProductButton/CreateProductButton';
 
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ export default function ProductList() {
 
   return isDataFetched ? (
     <div className="product-list-container">
+      <CreateProductButton />
       {products?.map((productData) => {
         const { id, productName, price } = productData;
 

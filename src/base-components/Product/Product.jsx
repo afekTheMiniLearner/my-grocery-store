@@ -13,9 +13,10 @@ export default function Product({
   onClick,
   onAdd,
   onRemove,
+  classes,
 }) {
   return (
-    <ContentWrapper onClick={onClick} classes="product">
+    <ContentWrapper onClick={onClick} classes={`product ${classes}`}>
       <section>{productName}</section>
       <section>${price}</section>
       <div className="product-buttons-container">
@@ -43,6 +44,7 @@ Product.propTypes = {
   onClick: PropTypes.func,
   onAdd: PropTypes.func,
   onRemove: PropTypes.func,
+  classes: PropTypes.string,
 };
 
 Product.defaultProps = {
@@ -52,4 +54,5 @@ Product.defaultProps = {
   onClick: undefined,
   onAdd: undefined,
   onRemove: undefined,
+  classes: '',
 };
