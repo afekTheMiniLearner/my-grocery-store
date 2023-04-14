@@ -15,20 +15,12 @@ export default function LabeledInput({
     <div className={`labeled-input-container ${classes}`}>
       <h4>{label} </h4>
       <div className="input-container">
-        {value !== undefined ? (
-          <input
-            type={type}
-            onChange={onChangeHandler}
-            placeholder={placeholder}
-            value={value}
-          />
-        ) : (
-          <input
-            type={type}
-            onChange={onChangeHandler}
-            placeholder={placeholder}
-          />
-        )}
+        <input
+          type={type}
+          onChange={onChangeHandler}
+          placeholder={placeholder}
+          value={value}
+        />
       </div>
     </div>
   );
@@ -45,7 +37,7 @@ LabeledInput.propTypes = {
 
 LabeledInput.defaultProps = {
   label: undefined,
-  value: undefined,
+  value: '',
   placeholder: '',
   onChangeHandler: undefined,
   type: 'text',
