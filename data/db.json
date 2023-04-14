@@ -16,9 +16,9 @@
       "price": 15
     },
     {
-      "id": "ee017ab4-9325-4b25-be27-b1fca1d7b8ca",
       "productName": "Bread - Endaglish Muffin",
-      "price": 66
+      "price": "68",
+      "id": "ee017ab4-9325-4b25-be27-b1fca1d7b8ca"
     },
     {
       "productName": "Bananas",

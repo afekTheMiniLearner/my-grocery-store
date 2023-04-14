@@ -58,7 +58,7 @@ export default function ProductList() {
           <Product
             key={id}
             productName={productName}
-            price={price}
+            price={+price}
             selectedCount={selectedProducts[id] ?? 0}
             onClick={() => navigate(`/product/${id}`)}
             onAdd={() => onAdd(id)}

@@ -8,13 +8,4 @@
 
   box-shadow: 5px 5px 10px -1px rgba(black, 0.15);
   background-color: $primary-color;
-
-  &.product-modifier {
-    justify-self: center;
-    align-self: center;
-    height: 500px;
-    width: 400px;
-    padding: 2em;
-    border-radius: 15px;
-  }
 }
