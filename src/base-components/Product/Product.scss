@@ -25,6 +25,34 @@
       font-size: 1.1em;
     }
   }
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    min-width: 150px;
+    max-width: 200px;
+    min-height: 200px;
+    max-height: 200px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    min-width: 120px;
+    max-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    min-width: 90px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+  }
+
+  @media (max-width: 480px) {
+    min-width: 60px;
+    max-width: 75px;
+    min-height: 75px;
+    max-height: 75px;
+  }
 }
 
 .product-buttons-container {
