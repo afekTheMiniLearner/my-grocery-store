@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import './ProductList.scss';
@@ -14,27 +15,15 @@ import {
 import { ProductsProxy } from '@utils';
 import CreateProductButton from '../CreateProductButton/CreateProductButton';
 
-export default function ProductList() {
-  const dispatch = useDispatch();
+function ProductList({
+  products,
+  selectedProducts,
+  initProducts,
+  onAdd,
+  onRemove,
+}) {
   const navigate = useNavigate();
   const [isDataFetched, setIsDataFetched] = useState(false);
-
-  const { products, selectedProducts } = useSelector((state) => {
-    return {
-      products: getProductsSelector(state),
-      selectedProducts: getSelectedProductsSelector(state),
-    };
-  });
-
-  const onAdd = (id) => {
-    dispatch(addToCartAction({ id }));
-  };
-  const onRemove = (id) => {
-    dispatch(removeFromCartAction({ id }));
-  };
-  const initProducts = (newProducts) => {
-    dispatch(initProductsAction({ products: newProducts }));
-  };
 
   useEffect(() => {
     ProductsProxy.getAllData()
@@ -72,3 +61,22 @@ export default function ProductList() {
     <Loading />
   );
 }
+
+const mapStateToProps = (state) => ({
+  products: getProductsSelector(state),
+  selectedProducts: getSelectedProductsSelector(state),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  initProducts: (newProducts) => {
+    dispatch(initProductsAction({ products: newProducts }));
+  },
+  onAdd: (id) => {
+    dispatch(addToCartAction({ id }));
+  },
+  onRemove: (id) => {
+    dispatch(removeFromCartAction({ id }));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

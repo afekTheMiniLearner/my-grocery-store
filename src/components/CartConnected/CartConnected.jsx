@@ -1,17 +1,11 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 
 import { Cart } from '@base-components';
 import { getSelectedProductsSelector, getTotalPriceSelector } from '@store';
 
-export default function CartConnected() {
-  const { selectedProducts, totalPrice } = useSelector((state) => {
-    return {
-      selectedProducts: getSelectedProductsSelector(state),
-      totalPrice: getTotalPriceSelector(state),
-    };
-  });
-
+function CartConnected({ selectedProducts, totalPrice }) {
   const totalSelected = Object.values(selectedProducts).reduce(
     (total, products) => total + products,
     0
@@ -19,3 +13,10 @@ export default function CartConnected() {
 
   return <Cart totalPrice={totalPrice} totalSelected={totalSelected} />;
 }
+
+const mapStateToProps = (state) => ({
+  totalPrice: getTotalPriceSelector(state),
+  selectedProducts: getSelectedProductsSelector(state),
+});
+
+export default connect(mapStateToProps)(CartConnected);
