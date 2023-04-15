@@ -35,6 +35,7 @@
     padding: 0.3em;
 
     section {
+      margin: 5px 0;
       font-size: 0.9em;
 
       &:first-child {
@@ -51,11 +52,8 @@
     padding: 0.2em;
 
     section {
-      font-size: 0.8em;
-
-      &:first-child {
-        font-size: 0.9em;
-      }
+      margin: 3px 0;
+      font-size: 0.7em !important;
     }
   }
 
@@ -67,27 +65,21 @@
     padding: 0.2em;
 
     section {
-      font-size: 0.7em;
-
-      &:first-child {
-        font-size: 0.8em;
-      }
+      margin: 3px 0;
+      font-size: 0.6em !important;
     }
   }
 
   @media (max-width: 480px) {
-    min-width: 60px;
-    max-width: 75px;
-    min-height: 75px;
-    max-height: 75px;
+    min-width: 70px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
     padding: 0.1em;
 
     section {
-      font-size: 0.5em;
-
-      &:first-child {
-        font-size: 0.6em;
-      }
+      margin: 3px 0;
+      font-size: 0.55em !important;
     }
   }
 }
@@ -98,4 +90,27 @@
   min-height: 85px;
   height: 85px;
   padding: 10px 0;
+
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    min-height: 50px;
+    max-height: 85px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    min-height: 50px;
+    max-height: 50px;
+    padding: 0;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    min-height: 50px;
+    max-height: 50px;
+    padding: 0;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0;
+  }
 }
