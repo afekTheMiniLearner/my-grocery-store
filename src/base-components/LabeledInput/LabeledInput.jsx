@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './LabeledInput.scss';
 
@@ -11,8 +12,10 @@ export default function LabeledInput({
   type,
   classes,
 }) {
+  const classesList = classNames('labeled-input-container', classes);
+
   return (
-    <div className={`labeled-input-container ${classes}`}>
+    <div className={classesList}>
       <h4>{label} </h4>
       <div className="input-container">
         <input

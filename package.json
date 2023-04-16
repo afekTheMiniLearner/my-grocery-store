@@ -40,9 +40,11 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.2",
     "craco-alias": "^3.0.1",
     "json-server": "^0.17.3",
     "path": "^0.12.7",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
@@ -51,6 +53,7 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
@@ -76,8 +79,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.7",
-    "prop-types": "^15.8.1",
-    "redux-devtools-extension": "^2.13.9",
     "sass": "^1.58.3",
     "typescript": "^5.0.2",
     "webpack": "^5.75.0"

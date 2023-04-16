@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './ActionButton.scss';
 
@@ -11,9 +12,11 @@ export default function ActionButton({
   children,
   style,
 }) {
+  const classesList = classNames('action-button-container', classes);
+
   return (
     <button
-      className={`action-button-container ${classes}`}
+      className={classesList}
       onClick={(event) => {
         event.stopPropagation();
         onClickHandler?.();

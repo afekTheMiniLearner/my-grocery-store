@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { BsCartPlus, BsCartDash } from 'react-icons/bs';
+import classNames from 'classnames';
 
 import './Product.scss';
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
@@ -15,8 +16,10 @@ export default function Product({
   onRemove,
   classes,
 }) {
+  const classesList = classNames('product', classes);
+
   return (
-    <ContentWrapper onClick={onClick} classes={`product ${classes}`}>
+    <ContentWrapper onClick={onClick} classes={classesList}>
       <section>{productName}</section>
       <section>${price}</section>
       <div className="product-buttons-container">
