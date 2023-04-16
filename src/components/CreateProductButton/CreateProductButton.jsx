@@ -10,7 +10,7 @@ export default function CreateProductButton() {
 
   return (
     <ContentWrapper
-      classes="product"
+      className="product"
       style={{ justifyContent: 'center' }}
       onClick={() => navigate('/product/new')}
     >

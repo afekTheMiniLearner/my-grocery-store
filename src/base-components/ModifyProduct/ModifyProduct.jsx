@@ -30,7 +30,7 @@ export default function ModifyProduct({
   };
 
   return (
-    <ContentWrapper classes="product-modifier">
+    <ContentWrapper className="product-modifier">
       <LabeledInput
         label="Product:"
         value={updatedProductName}
@@ -44,13 +44,13 @@ export default function ModifyProduct({
         onChangeHandler={onPriceChange}
         label="Price:"
         type="number"
-        classes="price"
+        className="price"
       />
       <ActionButton
         label={executeButtonLabel}
         onClickHandler={() => onExecute(data)}
         style={{ justifyContent: 'center' }}
-        classes="modifier"
+        className="modifier"
       />
       {children}
     </ContentWrapper>
