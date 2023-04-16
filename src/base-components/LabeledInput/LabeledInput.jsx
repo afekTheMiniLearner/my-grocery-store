@@ -10,12 +10,12 @@ export default function LabeledInput({
   placeholder,
   onChangeHandler,
   type,
-  classes,
+  className,
 }) {
-  const classesList = classNames('labeled-input-container', classes);
+  const classes = classNames('labeled-input-container', className);
 
   return (
-    <div className={classesList}>
+    <div className={classes}>
       <h4>{label} </h4>
       <div className="input-container">
         <input
@@ -35,7 +35,7 @@ LabeledInput.propTypes = {
   placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChangeHandler: PropTypes.func,
   type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 LabeledInput.defaultProps = {
@@ -44,5 +44,5 @@ LabeledInput.defaultProps = {
   placeholder: '',
   onChangeHandler: undefined,
   type: 'text',
-  classes: '',
+  className: '',
 };

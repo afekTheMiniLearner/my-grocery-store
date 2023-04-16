@@ -14,23 +14,23 @@ export default function Product({
   onClick,
   onAdd,
   onRemove,
-  classes,
+  className,
 }) {
-  const classesList = classNames('product', classes);
+  const classes = classNames('product', className);
 
   return (
-    <ContentWrapper onClick={onClick} classes={classesList}>
+    <ContentWrapper onClick={onClick} className={classes}>
       <section>{productName}</section>
       <section>${price}</section>
       <div className="product-buttons-container">
-        <ActionButton label="Buy" onClickHandler={onAdd} classes="product">
+        <ActionButton label="Buy" onClickHandler={onAdd} className="product">
           <BsCartPlus />
         </ActionButton>
         {!!selectedCount && (
           <ActionButton
             label={`Remove (${selectedCount})`}
             onClickHandler={onRemove}
-            classes="product warning"
+            className="product warning"
           >
             <BsCartDash />
           </ActionButton>
@@ -47,7 +47,7 @@ Product.propTypes = {
   onClick: PropTypes.func,
   onAdd: PropTypes.func,
   onRemove: PropTypes.func,
-  classes: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Product.defaultProps = {
@@ -57,5 +57,5 @@ Product.defaultProps = {
   onClick: undefined,
   onAdd: undefined,
   onRemove: undefined,
-  classes: '',
+  className: '',
 };

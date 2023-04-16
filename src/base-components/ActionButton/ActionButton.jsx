@@ -7,16 +7,16 @@ import './ActionButton.scss';
 export default function ActionButton({
   label,
   onClickHandler,
-  classes,
   type,
   children,
+  className,
   style,
 }) {
-  const classesList = classNames('action-button-container', classes);
+  const classes = classNames('action-button-container', className);
 
   return (
     <button
-      className={classesList}
+      className={classes}
       onClick={(event) => {
         event.stopPropagation();
         onClickHandler?.();
@@ -34,15 +34,15 @@ export default function ActionButton({
 ActionButton.propTypes = {
   label: PropTypes.string,
   onClickHandler: PropTypes.func,
-  classes: PropTypes.string,
   type: PropTypes.string,
+  className: PropTypes.string,
   style: PropTypes.object,
 };
 
 ActionButton.defaultProps = {
   label: undefined,
   onClickHandler: undefined,
-  classes: '',
   type: 'button',
+  className: '',
   style: {},
 };

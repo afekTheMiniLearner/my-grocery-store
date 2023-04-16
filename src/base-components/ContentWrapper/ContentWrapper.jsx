@@ -4,12 +4,17 @@ import classNames from 'classnames';
 
 import './ContentWrapper.scss';
 
-export default function ContentWrapper({ children, onClick, classes, style }) {
-  const classesList = classNames('content-wrapper', classes);
+export default function ContentWrapper({
+  children,
+  onClick,
+  className,
+  style,
+}) {
+  const classes = classNames('content-wrapper', className);
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      className={classesList}
+      className={classes}
       onClick={onClick}
       onKeyDown={onClick}
       style={style}
@@ -21,12 +26,12 @@ export default function ContentWrapper({ children, onClick, classes, style }) {
 
 ContentWrapper.propTypes = {
   onClick: PropTypes.func,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   style: PropTypes.object,
 };
 
 ContentWrapper.defaultProps = {
   onClick: undefined,
-  classes: '',
+  className: '',
   style: {},
 };
