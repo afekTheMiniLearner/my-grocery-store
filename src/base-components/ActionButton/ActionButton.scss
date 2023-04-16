@@ -36,6 +36,10 @@
   }
 
   &.product {
+    min-height: 40px;
+    max-height: 40px;
+    min-width: 180px;
+
     @media (min-width: 1025px) and (max-width: 1280px) {
       min-height: 30px;
       max-height: 30px;
@@ -43,20 +47,12 @@
       font-size: 1em !important;
     }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
-      min-height: 15px;
-      max-height: 15px;
+    @media (min-width: 481px) and (max-width: 1024px) {
+      min-height: 20px;
+      max-height: 20px;
       min-width: 110px;
       margin: 2px 0;
       font-size: 0.7em !important;
-    }
-
-    @media (min-width: 481px) and (max-width: 767px) {
-      min-height: 10px;
-      max-height: 10px;
-      min-width: 110px;
-      margin: 1px 0;
-      font-size: 0.6em !important;
     }
 
     @media (max-width: 480px) {
