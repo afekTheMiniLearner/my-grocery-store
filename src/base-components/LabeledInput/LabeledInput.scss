@@ -7,6 +7,7 @@
   margin-right: auto;
 
   input {
+    width: 100%;
     border-radius: 5px;
     border: 1px rgba(black, 0.4) solid;
     padding: 10px;
@@ -34,6 +35,12 @@
 .input-container {
   display: flex;
   align-items: center;
-  min-width: 150px;
+  min-width: 180px;
+  max-width: 180px;
   gap: 10px;
+
+  @media (max-width: 480px) {
+    min-width: 150px;
+    max-width: 150px;
+  }
 }

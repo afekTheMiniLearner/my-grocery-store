@@ -5,4 +5,14 @@
   width: 400px;
   padding: 2em;
   border-radius: 15px;
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 350px;
+    padding: 1.7em;
+  }
+
+  @media (max-width: 480px) {
+    width: 250px;
+    padding: 1.4em;
+  }
 }

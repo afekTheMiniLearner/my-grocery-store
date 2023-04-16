@@ -21,6 +21,18 @@
     min-height: 55px;
     max-height: 55px;
     min-width: 230px;
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      min-height: 45px;
+      max-height: 45px;
+      min-width: 200px;
+    }
+  
+    @media (max-width: 480px) {
+      min-height: 40px;
+      max-height: 40px;
+      min-width: 180px;
+    }
   }
 
   &:hover {
@@ -34,35 +46,37 @@
     background-color: $warning-color;
   }
 
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    min-height: 30px;
-    max-height: 30px;
-    min-width: 150px;
-    font-size: 1em !important;
-  }
+  &:not(.modifier) {
+    @media (min-width: 1025px) and (max-width: 1280px) {
+      min-height: 30px;
+      max-height: 30px;
+      min-width: 150px;
+      font-size: 1em !important;
+    }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    min-height: 15px;
-    max-height: 15px;
-    min-width: 110px;
-    margin: 2px 0;
-    font-size: 0.7em !important;
-  }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      min-height: 15px;
+      max-height: 15px;
+      min-width: 110px;
+      margin: 2px 0;
+      font-size: 0.7em !important;
+    }
 
-  @media (min-width: 481px) and (max-width: 767px) {
-    min-height: 10px;
-    max-height: 10px;
-    min-width: 110px;
-    margin: 1px 0;
-    font-size: 0.6em !important;
-  }
+    @media (min-width: 481px) and (max-width: 767px) {
+      min-height: 10px;
+      max-height: 10px;
+      min-width: 110px;
+      margin: 1px 0;
+      font-size: 0.6em !important;
+    }
 
-  @media (max-width: 480px) {
-    min-height: 17px;
-    max-height: 17px;
-    min-width: 80px;
-    margin: 1px 0;
-    font-size: 0.5em !important;
-    padding: 4px;
+    @media (max-width: 480px) {
+      min-height: 17px;
+      max-height: 17px;
+      min-width: 80px;
+      margin: 1px 0;
+      font-size: 0.5em !important;
+      padding: 4px;
+    }
   }
 }
