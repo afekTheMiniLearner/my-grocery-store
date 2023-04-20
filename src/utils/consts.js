@@ -1,6 +1,6 @@
 import ProxyDB from './proxy';
 
-export const DB_PRODUCTS_URL = 'http://localhost:3004/ProductsData';
+export const DB_PRODUCTS_URL = process.env.REACT_APP_DB_URL;
 export const ProductsProxy = new ProxyDB(DB_PRODUCTS_URL);
 
 // This mock list used only for storybook
