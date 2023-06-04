@@ -15,6 +15,7 @@
   border: unset !important;
   border-radius: 5px !important;
   box-shadow: 5px 5px 10px 1px rgba(black, 0.15) !important;
+  user-select: none;
   cursor: pointer;
 
   &.modifier {
