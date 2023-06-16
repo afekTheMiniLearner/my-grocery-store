@@ -1,8 +1,8 @@
 {
-  "name": "my-grocery-store",
+  "name": "grocery-store",
   "description": "This project created for buying grocery store products.",
   "author": "afek-sakaju",
-  "homepage": "https://github.com/afekTheMiniLearner/my-grocery-store",
+  "homepage": "https://github.com/afekTheMiniLearner/grocery-store",
   "keywords": [
     "grocery",
     "shop-app",
@@ -13,7 +13,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/afekTheMiniLearner/my-grocery-store"
+    "url": "https://github.com/afekTheMiniLearner/grocery-store"
   },
   "scripts": {
     "start": "craco start",

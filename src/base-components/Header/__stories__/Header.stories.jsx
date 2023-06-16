@@ -72,7 +72,7 @@ const Template = (args) => (
 
 export const Custom = Template.bind({});
 Custom.argTypes = {
-  title: { control: { type: 'text' }, defaultValue: 'my-grocery-store' },
+  title: { control: { type: 'text' }, defaultValue: 'grocery-store' },
 };
 Custom.decorators = [
   (Story) => (

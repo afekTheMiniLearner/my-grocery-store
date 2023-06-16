@@ -1,4 +1,4 @@
-# My-Grocery-Store
+# Grocery-Store
 
 ### This is my project of a grocery-store site where you can buy products, edit them or create new products to the store. <br />The project has been built using ReactJS, SASS, Redux-toolkit, and ESLINT to ensure best functionality, user-friendly design. <br />Another technologies iv'e used are json-server to make the store function as it have its own server side, and react react-router-dom to represent the user variety of pages, each page for its own purpose. <br />
 
