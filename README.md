@@ -1,23 +1,36 @@
 # Grocery-Store
 
-### This is my project of a grocery-store site where you can buy products, edit them or create new products to the store. <br />The project has been built using ReactJS, SASS, Redux-toolkit, and ESLINT to ensure best functionality, user-friendly design. <br />Another technologies iv'e used are json-server to make the store function as it have its own server side, and react react-router-dom to represent the user variety of pages, each page for its own purpose. <br />
+### Introducing my grocery store site project, where you can conveniently purchase products, edit existing items, and add new products to the store. The project has been meticulously developed to prioritize optimal functionality and offer a user-friendly design.<br />
 
 <img src="./readme-resources/shops.png" width=150px height=150px align="right">
 
 ---
 
-**Installation:**</br>
-_`npm install`_
+**Command lines:**
 
-**Running the project:**</br>
-_`npm run json-server`_</br>
-_`npm run start`_
+- `npm install` <br /> Install all the necessary packages for running and developing the project.
+- `npm run json-server`<br /> To run the project's database.
+- `npm run start`<br /> For running the project.
 
 ---
 
-### **Example of using the store:**
+### **Get a glimpse of the app in action:**
 
 ![Example-GIF](./readme-resources/store-gif.gif)
+
+---
+
+### The technologies used in this project include:
+
+- [x] _**ReactJS**_ : the project is built on the _ReactJS_ framework.
+- [x] _**SASS**_ : the project's styling is implemented using _SASS_.
+- [x] _**Redux-toolkit**_ : by employing _Redux-toolkit_, the project achieves resilient state management, enabling seamless data flow and heightened functionality.
+- [x] _**ESLINT**_ : the project adheres to the _ESLint_ guidelines and follows the best practices recommended by _airbnb_.
+- [x] _**React-router-dom**_ : enabling the creation of multiple pages and configuring different page for each path.
+
+### Additional technologies used as development tools include:
+
+- [x] _**Media-query**_ : _media queries_ have been employed to ensure compatibility with smaller screens.
 
 ---
 
