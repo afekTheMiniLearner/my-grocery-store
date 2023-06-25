@@ -1,7 +1,6 @@
 import Proxy from './proxy';
 
-export const DB_PRODUCTS_URL = process.env.REACT_APP_DB_URL;
-export const ProductsProxy = new Proxy(DB_PRODUCTS_URL);
+export const ProductsProxy = new Proxy(process.env.REACT_APP_DB_URL);
 
 // This mock list used only for storybook
 export const MOCK_PRODUCTS = [
