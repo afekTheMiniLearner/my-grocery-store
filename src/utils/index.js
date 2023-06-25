@@ -1,2 +1,2 @@
 export * from './consts';
-export { default as ProxyDB } from './proxy';
+export { default as Proxy } from './proxy';
