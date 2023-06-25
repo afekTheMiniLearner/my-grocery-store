@@ -20,7 +20,7 @@ export default class ProxyDB {
         response = data;
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
         response = null;
       });
 
@@ -44,7 +44,7 @@ export default class ProxyDB {
         response = data;
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
         response = null;
       });
 
@@ -74,7 +74,7 @@ export default class ProxyDB {
         response = true;
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
         response = false;
       });
 
@@ -104,7 +104,7 @@ export default class ProxyDB {
         response = true;
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
         response = false;
       });
 
@@ -131,7 +131,7 @@ export default class ProxyDB {
         response = true;
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
         response = false;
       });
 
