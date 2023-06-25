@@ -1,8 +1,4 @@
-import Proxy from './proxy';
-
-export const ProductsProxy = new Proxy(process.env.REACT_APP_DB_URL);
-
-// This mock list used only for storybook
+// eslint-disable-next-line import/prefer-default-export
 export const MOCK_PRODUCTS = [
   {
     id: '81ff8102-d0dc-4ce1-b944-3a0b4c787c1b',
@@ -20,3 +16,4 @@ export const MOCK_PRODUCTS = [
     price: 15,
   },
 ];
+// This mock list used only for storybook

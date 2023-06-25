@@ -1,2 +1,4 @@
+import Proxy from './proxy';
+
 export * from './consts';
-export { default as Proxy } from './proxy';
+export const ProductsProxy = new Proxy(process.env.REACT_APP_DB_URL);
