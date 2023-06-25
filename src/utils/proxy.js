@@ -1,10 +1,10 @@
 export default class ProxyDB {
-  constructor(DB_URL) {
-    this.DB_URL = DB_URL;
+  constructor(url) {
+    this.url = url;
   }
 
   async getAllData() {
-    const requestUrl = this.DB_URL;
+    const requestUrl = this.url;
     const method = 'GET';
     let response;
 
@@ -28,7 +28,7 @@ export default class ProxyDB {
   }
 
   async getData(id) {
-    const requestUrl = `${this.DB_URL}/${id}`;
+    const requestUrl = `${this.url}/${id}`;
     const method = 'GET';
     let response;
 
@@ -52,7 +52,7 @@ export default class ProxyDB {
   }
 
   async post(data) {
-    const requestUrl = this.DB_URL;
+    const requestUrl = this.url;
     const method = 'POST';
     let response;
 
@@ -82,7 +82,7 @@ export default class ProxyDB {
   }
 
   async put(data, id) {
-    const requestUrl = `${this.DB_URL}/${id}`;
+    const requestUrl = `${this.url}/${id}`;
     const method = 'PUT';
     let response;
 
@@ -112,7 +112,7 @@ export default class ProxyDB {
   }
 
   async delete(id) {
-    const requestUrl = `${this.DB_URL}/${id}`;
+    const requestUrl = `${this.url}/${id}`;
     const method = 'DELETE';
 
     let response;
