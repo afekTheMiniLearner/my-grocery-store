@@ -1,4 +1,4 @@
-export default class Proxy {
+export default class BaseProxy {
   constructor(url) {
     this.url = url;
   }
