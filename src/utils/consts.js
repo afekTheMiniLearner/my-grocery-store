@@ -1,4 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
+// This mock list used only for storybook
 export const MOCK_PRODUCTS = [
   {
     id: '81ff8102-d0dc-4ce1-b944-3a0b4c787c1b',
@@ -16,4 +16,5 @@ export const MOCK_PRODUCTS = [
     price: 15,
   },
 ];
-// This mock list used only for storybook
+
+export const SERVER_URL = process.env.REACT_APP_DB_URL

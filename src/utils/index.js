@@ -1,4 +1,5 @@
 import BaseProxy from './proxy';
+import {SERVER_URL} from './consts';
 
 export * from './consts';
-export const ProductsProxy = new BaseProxy(process.env.REACT_APP_DB_URL);
+export const ProductsProxy = new BaseProxy(SERVER_URL);
