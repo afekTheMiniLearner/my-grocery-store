@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ProductsProxy } from '@utils';
 import { ActionButton, ModifyProduct } from '@base-components';
 
-export default function EditProduct({ id, navigateCB, price, productName}) {
+export default function EditProduct({ id, navigateCB, price, productName }) {
   const onExecuteHandler = (data) => {
     const isUpdated = ProductsProxy?.put(data, id);
     if (isUpdated) navigateCB?.();
@@ -36,9 +36,9 @@ EditProduct.propTypes = {
   productName: PropTypes.string,
 };
 
+EditProduct.defaultProps = {
   id: undefined,
   navigateCB: undefined,
   price: 0,
   productName: 'product',
-EditProduct.defaultProps = {
 };

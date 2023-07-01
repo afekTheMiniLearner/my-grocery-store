@@ -21,8 +21,8 @@ export default function ActionButton({
         event.stopPropagation();
         onClickHandler?.();
       }}
-      // eslint-disable-next-line react/button-has-type
       style={style}
+      // eslint-disable-next-line react/button-has-type
       type={type}
     >
       {label}
