@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ImPlus } from 'react-icons/im';
+import { TbSquareRoundedPlus as CreateIcon } from 'react-icons/tb';
 
 import './CreateProductButton.scss';
 import { ContentWrapper } from '@base-components';
@@ -11,10 +11,10 @@ export default function CreateProductButton() {
   return (
     <ContentWrapper
       className="product"
-      style={{ justifyContent: 'center' }}
       onClick={() => navigate('/product/new')}
     >
-      <ImPlus size="4em" className="create-icon" />
+      <section>Add product</section>
+      <CreateIcon size="4em" className="create-icon" />
     </ContentWrapper>
   );
 }

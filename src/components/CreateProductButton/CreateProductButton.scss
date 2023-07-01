@@ -1,3 +1,11 @@
 .create-icon {
-  color: #8cff8c;
+  margin: auto;
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 0.6em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.4em;
+  }
 }
