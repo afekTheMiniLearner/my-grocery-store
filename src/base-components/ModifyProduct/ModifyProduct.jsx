@@ -7,11 +7,11 @@ import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import ActionButton from '../ActionButton/ActionButton';
 
 export default function ModifyProduct({
-  productName,
-  price,
+  children,
   executeButtonLabel,
   onExecute,
-  children,
+  price,
+  productName,
 }) {
   const [updatedProductName, setUpdatedProductName] = useState(undefined);
   const [updatedPrice, setUpdatedPrice] = useState(price);
@@ -33,24 +33,24 @@ export default function ModifyProduct({
     <ContentWrapper className="product-modifier">
       <LabeledInput
         label="Product:"
-        value={updatedProductName}
-        placeholder={productName}
         onChangeHandler={onProductNameChange}
+        placeholder={productName}
         type="text"
+        value={updatedProductName}
       />
       <LabeledInput
-        placeholder={price}
-        value={updatedPrice}
-        onChangeHandler={onPriceChange}
-        label="Price:"
-        type="number"
         className="price"
+        label="Price:"
+        onChangeHandler={onPriceChange}
+        placeholder={price}
+        type="number"
+        value={updatedPrice}
       />
       <ActionButton
+        className="modifier"
         label={executeButtonLabel}
         onClickHandler={() => onExecute(data)}
         style={{ justifyContent: 'center' }}
-        className="modifier"
       />
       {children}
     </ContentWrapper>
@@ -58,15 +58,15 @@ export default function ModifyProduct({
 }
 
 ModifyProduct.propTypes = {
-  productName: PropTypes.string,
   executeButtonLabel: PropTypes.string,
   onExecute: PropTypes.func,
   price: PropTypes.number,
+  productName: PropTypes.string,
 };
 
 ModifyProduct.defaultProps = {
-  productName: 'Product name',
   executeButtonLabel: undefined,
   onExecute: undefined,
   price: 0,
+  productName: 'Product name',
 };

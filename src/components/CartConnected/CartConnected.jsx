@@ -15,8 +15,8 @@ function CartConnected({ selectedProducts, totalPrice }) {
 }
 
 const mapStateToProps = (state) => ({
-  totalPrice: getTotalPriceSelector(state),
   selectedProducts: getSelectedProductsSelector(state),
+  totalPrice: getTotalPriceSelector(state),
 });
 
 export default connect(mapStateToProps)(CartConnected);

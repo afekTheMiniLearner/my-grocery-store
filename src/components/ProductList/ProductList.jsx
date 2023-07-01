@@ -16,11 +16,11 @@ import { ProductsProxy } from '@utils';
 import CreateProductButton from '../CreateProductButton/CreateProductButton';
 
 function ProductList({
-  products,
-  selectedProducts,
   initProducts,
   onAdd,
   onRemove,
+  products,
+  selectedProducts,
 }) {
   const navigate = useNavigate();
   const [isDataFetched, setIsDataFetched] = useState(false);
@@ -47,12 +47,12 @@ function ProductList({
         return (
           <Product
             key={id}
-            productName={productName}
-            price={+price}
-            selectedCount={selectedProducts[id] ?? 0}
-            onClick={() => navigate(`/product/${id}`)}
             onAdd={() => onAdd(id)}
+            onClick={() => navigate(`/product/${id}`)}
             onRemove={() => onRemove(id)}
+            price={+price}
+            productName={productName}
+            selectedCount={selectedProducts[id] ?? 0}
           />
         );
       })}

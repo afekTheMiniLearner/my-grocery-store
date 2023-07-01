@@ -6,8 +6,8 @@ import './ContentWrapper.scss';
 
 export default function ContentWrapper({
   children,
-  onClick,
   className,
+  onClick,
   style,
 }) {
   const classes = classNames('content-wrapper', className);
@@ -25,13 +25,13 @@ export default function ContentWrapper({
 }
 
 ContentWrapper.propTypes = {
-  onClick: PropTypes.func,
   className: PropTypes.string,
+  onClick: PropTypes.func,
   style: PropTypes.object,
 };
 
 ContentWrapper.defaultProps = {
-  onClick: undefined,
   className: '',
+  onClick: undefined,
   style: {},
 };

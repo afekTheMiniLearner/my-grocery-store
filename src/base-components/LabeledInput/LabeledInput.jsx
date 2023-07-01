@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import './LabeledInput.scss';
 
 export default function LabeledInput({
-  label,
-  value,
-  placeholder,
-  onChangeHandler,
-  type,
   className,
+  label,
+  onChangeHandler,
+  placeholder,
+  type,
+  value,
 }) {
   const classes = classNames('labeled-input-container', className);
 
@@ -19,9 +19,9 @@ export default function LabeledInput({
       <h4>{label} </h4>
       <div className="input-container">
         <input
-          type={type}
           onChange={onChangeHandler}
           placeholder={placeholder}
+          type={type}
           value={value}
         />
       </div>
@@ -30,19 +30,19 @@ export default function LabeledInput({
 }
 
 LabeledInput.propTypes = {
-  label: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChangeHandler: PropTypes.func,
-  type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
+  label: PropTypes.string,
+  onChangeHandler: PropTypes.func,
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  type: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 LabeledInput.defaultProps = {
-  label: undefined,
-  value: '',
-  placeholder: '',
-  onChangeHandler: undefined,
-  type: 'text',
   className: '',
+  label: undefined,
+  onChangeHandler: undefined,
+  placeholder: '',
+  type: 'text',
+  value: '',
 };

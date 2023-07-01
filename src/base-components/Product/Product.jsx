@@ -8,29 +8,29 @@ import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import ActionButton from '../ActionButton/ActionButton';
 
 export default function Product({
-  productName,
-  price,
-  selectedCount,
-  onClick,
-  onAdd,
-  onRemove,
   className,
+  onAdd,
+  onClick,
+  onRemove,
+  price,
+  productName,
+  selectedCount,
 }) {
   const classes = classNames('product', className);
 
   return (
-    <ContentWrapper onClick={onClick} className={classes}>
+    <ContentWrapper className={classes} onClick={onClick}>
       <section>{productName}</section>
       <section>${price}</section>
       <div className="product-buttons-container">
-        <ActionButton label="Buy" onClickHandler={onAdd} className="product">
+        <ActionButton className="product" label="Buy" onClickHandler={onAdd}>
           <BsCartPlus />
         </ActionButton>
         {!!selectedCount && (
           <ActionButton
+            className="product warning"
             label={`Remove (${selectedCount})`}
             onClickHandler={onRemove}
-            className="product warning"
           >
             <BsCartDash />
           </ActionButton>
@@ -41,21 +41,21 @@ export default function Product({
 }
 
 Product.propTypes = {
-  productName: PropTypes.string,
-  price: PropTypes.number,
-  selectedCount: PropTypes.number,
-  onClick: PropTypes.func,
-  onAdd: PropTypes.func,
-  onRemove: PropTypes.func,
   className: PropTypes.string,
+  onAdd: PropTypes.func,
+  onClick: PropTypes.func,
+  onRemove: PropTypes.func,
+  price: PropTypes.number,
+  productName: PropTypes.string,
+  selectedCount: PropTypes.number,
 };
 
 Product.defaultProps = {
-  productName: undefined,
-  price: 0,
-  selectedCount: 0,
-  onClick: undefined,
-  onAdd: undefined,
-  onRemove: undefined,
   className: '',
+  onAdd: undefined,
+  onClick: undefined,
+  onRemove: undefined,
+  price: 0,
+  productName: undefined,
+  selectedCount: 0,
 };

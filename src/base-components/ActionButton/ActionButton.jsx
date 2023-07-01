@@ -5,12 +5,12 @@ import classNames from 'classnames';
 import './ActionButton.scss';
 
 export default function ActionButton({
-  label,
-  onClickHandler,
-  type,
   children,
   className,
+  label,
+  onClickHandler,
   style,
+  type,
 }) {
   const classes = classNames('action-button-container', className);
 
@@ -22,8 +22,8 @@ export default function ActionButton({
         onClickHandler?.();
       }}
       // eslint-disable-next-line react/button-has-type
-      type={type}
       style={style}
+      type={type}
     >
       {label}
       {children}
@@ -32,17 +32,17 @@ export default function ActionButton({
 }
 
 ActionButton.propTypes = {
+  className: PropTypes.string,
   label: PropTypes.string,
   onClickHandler: PropTypes.func,
-  type: PropTypes.string,
-  className: PropTypes.string,
   style: PropTypes.object,
+  type: PropTypes.string,
 };
 
 ActionButton.defaultProps = {
+  className: '',
   label: undefined,
   onClickHandler: undefined,
-  type: 'button',
-  className: '',
   style: {},
+  type: 'button',
 };

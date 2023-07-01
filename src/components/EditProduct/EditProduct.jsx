@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ProductsProxy } from '@utils';
 import { ActionButton, ModifyProduct } from '@base-components';
 
-export default function EditProduct({ id, productName, price, navigateCB }) {
+export default function EditProduct({ id, navigateCB, price, productName}) {
   const onExecuteHandler = (data) => {
     const isUpdated = ProductsProxy?.put(data, id);
     if (isUpdated) navigateCB?.();
@@ -12,17 +12,17 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
 
   return (
     <ModifyProduct
-      id={id}
-      productName={productName}
-      price={price}
-      modificationType="put"
       executeButtonLabel="Update product"
+      id={id}
+      modificationType="put"
       onExecute={onExecuteHandler}
+      price={price}
+      productName={productName}
     >
       <ActionButton
+        className="modifier warning"
         label="Delete product"
         onClickHandler={() => ProductsProxy.delete(id) && navigateCB?.()}
-        className="modifier warning"
         style={{ justifyContent: 'center' }}
       />
     </ModifyProduct>
@@ -31,14 +31,14 @@ export default function EditProduct({ id, productName, price, navigateCB }) {
 
 EditProduct.propTypes = {
   id: PropTypes.string,
-  productName: PropTypes.string,
-  price: PropTypes.number,
   navigateCB: PropTypes.func,
+  price: PropTypes.number,
+  productName: PropTypes.string,
 };
 
-EditProduct.defaultProps = {
   id: undefined,
-  productName: 'product',
-  price: 0,
   navigateCB: undefined,
+  price: 0,
+  productName: 'product',
+EditProduct.defaultProps = {
 };
