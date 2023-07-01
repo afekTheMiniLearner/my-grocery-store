@@ -1,5 +1,3 @@
-@import '@styles/variables.scss';
-
 .header-container {
   position: sticky;
   display: flex;
@@ -11,7 +9,7 @@
 
   box-shadow: 5px 5px 10px -1px rgba(black, 0.15);
   border-radius: 0 0 10px 10px;
-  background-color: $primary-color;
+  background-color: rgba(peachpuff, 0.95);
 
   .title {
     margin-right: auto;

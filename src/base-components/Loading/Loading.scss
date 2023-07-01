@@ -1,7 +1,7 @@
-@import '@styles/variables.scss';
-
 .loading-content-wrapper {
-  @include centered-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   height: 700px;
   width: 99vw;

@@ -9,7 +9,6 @@
       "@utils": ["./src/utils/*"],
       "@store": ["./src/store/*"],
       "@screens": ["./src/screens/*"],
-      "@styles": ["./src/styles/*"]
     }
   },
   "include": ["src/**/*"]

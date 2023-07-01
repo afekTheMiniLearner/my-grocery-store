@@ -9,7 +9,6 @@ module.exports = {
     '@utils': path.join(__dirname, 'src/utils'),
     '@store': path.join(__dirname, 'src/store'),
     '@screens': path.join(__dirname, 'src/screens'),
-    '@styles': path.join(__dirname, 'src/styles'),
   },
   plugins: [{ plugin: cracoAlias, options: { source: 'jsconfig' } }],
 };
