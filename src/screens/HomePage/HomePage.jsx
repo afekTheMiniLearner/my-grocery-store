@@ -6,7 +6,10 @@ import { Header } from '@base-components';
 export default function StoreHomePage() {
   return (
     <div>
-      <Header title="My grocery store">
+      <Header
+        title="Prime choice grocery store
+"
+      >
         <CartConnected />
       </Header>
       <ProductList />
